@@ -1,9 +1,9 @@
-const router = require('express').Router();
+const router = require("express").Router();
 
-const path = require('path')
+const path = require("path");
 // Getting / prepended to everything
 // Hey I declared routes here.
-const apiRoutes = require('./apiRoutes');
+const apiRoutes = require("./apiRoutes");
 
 
 
@@ -18,7 +18,7 @@ const apiRoutes = require('./apiRoutes');
 //  /api
 
 // This will prepend /api to anyroute declared within apiRoutes
-router.use('/api', apiRoutes);
+router.use("/api", apiRoutes);
 
 
 
