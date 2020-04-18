@@ -1,0 +1,52 @@
+
+html {
+  min-height: 100%;
+}
+
+body {
+  background-image: linear-gradient(to bottom right, #fea060, #a03c3c);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.card {
+  height: 800px;
+  width: 500px;
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  border-radius: 30px;
+  margin-top: 40px;
+}
+
+.picture {
+  height: 300px;
+  width: 300px;
+  background-color: lawngreen;
+  margin: auto;
+}
+
+.yesButton {
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  background-color: rgb(68, 114, 21);
+  color: white;
+  font-size: 50px;
+  border: 0;
+  margin: 20px;
+}
+
+.noButton {
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  background-color: rgb(134, 17, 17);
+  color: white;
+  font-size: 50px;
+  border: 0;
+  margin: 20px;
+}

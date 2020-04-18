@@ -1,9 +1,10 @@
 import React from 'react';
+import Match from './components/Match';
 
 const App = props => (
 
   <div className="container">
-Hello there, let's BEGIN.
+    <Match />
   </div>
 
 );
