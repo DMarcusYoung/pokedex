@@ -4,8 +4,8 @@ const Decide = props => {
   return (
 
       <div>
-<button className="yesButton">O</button>
-<button className="noButton">X</button>
+<button className="yesBtn">O</button>
+<button className="noBtn">X</button>
       </div>
   )
 };
