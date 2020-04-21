@@ -17,10 +17,10 @@ class Create extends Component {
 
       <div className="card">
         <h1>CREATE A ROOM</h1>
-
         <form>
-          <div className="formBox">
+          <div>
             <input
+              className="formBox"
               onChange={this.handleInputChange}
               value={this.state.input}
               input type="text"
@@ -28,7 +28,11 @@ class Create extends Component {
           </div>
         </form>
 
-        <Link to="/">
+        <button className="decideBtn">
+          Create
+          </button>
+
+        <Link to="/lobby">
           <button className="backBtn">
             Back
           </button>

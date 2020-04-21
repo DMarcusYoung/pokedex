@@ -19,8 +19,9 @@ class Join extends Component {
         <h1>JOIN</h1>
 
         <form>
-          <div className="formBox">
+          <div>
             <input
+            className="formBox"
               onChange={this.handleInputChange}
               value={this.state.input}
               input type="text"
@@ -28,7 +29,7 @@ class Join extends Component {
           </div>
         </form>
 
-        <Link to="/">
+        <Link to="/lobby">
           <button className="backBtn">
             Back
           </button>
