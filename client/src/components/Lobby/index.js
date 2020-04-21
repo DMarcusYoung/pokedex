@@ -7,13 +7,13 @@ class Lobby extends Component {
     return (
 
       <div className="card">
-        <Link to="/create"> <button className="createBtn">
+        <Link to="/create"> <button className="decideBtn">
           Create
           </button>
         </Link>
 
         <Link to="/join">
-          <button className="joinBtn">
+          <button className="decideBtn">
             Join
           </button>
         </Link>
