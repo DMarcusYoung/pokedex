@@ -3,18 +3,41 @@ const connection = require('../config/connection');
 const chickenTinderQueries = require();
 
 module.exports = {
-    addRoomId: (req, res) => {
-        // room_id is a placeholder for when we create room_id in the front end which will be sent from front end as a post request
+    // Used when user presses Create in the lobby
+    // The created roomId will be added to the db
+    createRoom: (req, res) => {
+        // roomId placeholder for roomId created in the front end and sent as a post request
+        // chickenTinderQueries.createRoom is placeholder for the corresponding query
         const { roomId } = req.body;
-        connection.query(chickenTinderQueries.addRoomId, roomId, (err) => {
+        connection.query(chickenTinderQueries.createRoom, roomId, (err) => {
             if (err) throw err;
             return res.send();
         });
     },
+    // Used when user presses Join in the lobby and enters a room Id
+    // The roomId from the db will be compared to the one entered by user
     getRoomId: (req, res) => {
         connection.query(chickenTinderQueries.getRoomId, (err, roomId) => {
             if (err) throw err;
             return res.json(roomId);
+        });
+    },
+    // Used when Create user enters a city for to find restaurants
+    // Adds a restaurant to the db
+    // May possibly be able to do all restaurants at the same time depending on api
+    // Currently only adds restaurants to the db, might have to get them back from the db
+    addRestaurant: (req, res) => {
+        connection.query(chickenTinderQueries.addRestaurant, (err) => {
+            if (err) throw err;
+            return res.send();
+        });
+    },
+    // Used when Join user enters the correct roomId
+    // Used to display restaurants for the user
+    getRestaurants: (req, res) => {
+        connection.query(chickenTinderQueries.getRestaurants, (err, restaurants) => {
+            if (err) throw err;
+            return res.json(restaurants);
         });
     },
 };
