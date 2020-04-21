@@ -4,17 +4,18 @@ CREATE DATABASE chicken_tinder_db;
 
 USE chicken_tinder_db;
 
-CREATE TABLE room (
+CREATE TABLE  room (
     id INT AUTO_INCREMENT NOT NULL,
     room_number INT NOT NULL,
+    closed VARCHAR(1) DEFAULT 'n',
     PRIMARY KEY(id)
 );
 
-CREATE TABLE choies (
+CREATE TABLE restaurants (
     id INT AUTO_INCREMENT NOT NULL,
-    room_id INT,
+    room_id INT NOT NULL,
     restaurant_name VARCHAR(255),
-    count INT DEFAULT 0,
+    num_of_yes INT DEFAULT 0,
     PRIMARY KEY(id)
 );
 
