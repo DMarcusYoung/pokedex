@@ -1,15 +1,14 @@
 import React from 'react';
-import Restaurant from './Restaurant';
-import Decide from './Decide';
+import Chosen from './Chosen';
+
 
 const Match = props => {
   return (
 
-      <div className="card">
-        <Restaurant />
-        <Decide />
-
-      </div>
+    <div className="card">
+      <h1>YOU MATCHED!</h1>
+<Chosen />
+    </div>
   )
 };
 
