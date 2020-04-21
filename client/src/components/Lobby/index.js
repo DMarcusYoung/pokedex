@@ -1,16 +1,26 @@
-import React from 'react';
-import Create from './Create';
-import Join from './Join';
+import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 
-const Lobby = props => {
-  return (
+class Lobby extends Component {
+
+  render() {
+    return (
 
       <div className="card">
-        <Create />
-        <Join />
+        <Link to="/create"> <button className="createBtn">
+          Create
+          </button>
+        </Link>
+
+        <Link to="/join">
+          <button className="joinBtn">
+            Join
+          </button>
+        </Link>
 
       </div>
-  )
+    )
+  }
 };
 
 export default Lobby;

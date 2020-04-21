@@ -1,12 +1,41 @@
-import React from 'react';
+import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 
-const Join = props => {
-  return (
+class Join extends Component {
 
-    <div>
-      <button className="joinBtn">Join</button>
-    </div>
-  )
+  state = {
+    input: ""
+  };
+
+  handleInputChange = (e) => {
+    const { value } = e.target;
+    this.setState({ input: value });
+  };
+
+  render() {
+    return (
+
+      <div className="card">
+        <h1>JOIN</h1>
+
+        <form>
+          <div className="formBox">
+            <input
+              onChange={this.handleInputChange}
+              value={this.state.input}
+              input type="text"
+            />
+          </div>
+        </form>
+
+        <Link to="/">
+          <button className="backBtn">
+            Back
+          </button>
+        </Link>
+      </div>
+    )
+  }
 };
 
 export default Join;

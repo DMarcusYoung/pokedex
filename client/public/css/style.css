@@ -72,3 +72,21 @@ body {
   border: 0;
   margin: 50px;
 }
+
+.backBtn {
+  height: 50px;
+  width: 200px;
+  border-radius: 10px;
+  background-color: rgb(104, 104, 104);
+  color: white;
+  font-size: 30px;
+  border: 0;
+  margin: 50px;
+}
+
+.formBox {
+  height: 50px;
+  width: 200px;
+  font-size: 30px;
+  margin: 50px;
+}
