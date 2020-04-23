@@ -1,14 +1,32 @@
-import React from 'react';
+import React, { Component } from "react";
 
-const Restaurant = props => {
-  return (
+class Restaurant extends Component {
 
-    <div>
-      <h1>Title</h1>
-      <h2>Rating</h2>
-      <div className="picture">Picture</div>
-    </div>
-  )
+  state = {
+    name: "Title",
+    rating: "Rating",
+    picture: "Picture"
+  };
+
+  nextRestaurant = () => {
+    this.setState({ name: this.state.name + 'next' });
+};
+
+  render() {
+    return (
+
+      <div>
+
+        <h1>{this.state.name}</h1>
+        <h2>{this.state.rating}</h2>
+        <p className="picture">{this.state.picture}</p>
+
+        <button className="noBtn" onClick={this.nextRestaurant}>X</button>
+        <button className="yesBtn" onClick={this.nextRestaurant}>O</button>
+
+      </div>
+    )
+  }
 };
 
 export default Restaurant;
