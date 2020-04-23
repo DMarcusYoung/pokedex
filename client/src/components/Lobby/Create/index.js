@@ -23,7 +23,7 @@ class Create extends Component {
               className="formBox"
               onChange={this.handleInputChange}
               value={this.state.input}
-              input type="text"
+              input type="number"
             />
           </div>
         </form>
