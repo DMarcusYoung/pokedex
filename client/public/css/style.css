@@ -5,7 +5,7 @@ font-family: 'Montserrat', sans-serif;
 }
 
 body {
-  background-image: linear-gradient(135deg, #feab3a 0%,#f35626 100%);
+  background-image: linear-gradient(135deg, #6bb7ff 0%,#56145c 100%);
 font-family: 'Montserrat', sans-serif;
 }
 
@@ -53,7 +53,8 @@ a, a:link, a:visited, a:hover, a:active
 .picture {
   height: 300px;
   width: 300px;
-  background-color: rgb(95, 120, 202);
+  border-radius: 10px;
+  background-color: rgb(218, 122, 253);
   margin: auto;
 }
 
@@ -61,7 +62,7 @@ a, a:link, a:visited, a:hover, a:active
   height: 100px;
   width: 100px;
   border-radius: 50px;
-  background-color: rgb(68, 114, 21);
+  background-image: linear-gradient(135deg, #5add50 0%,#21aabd 100%);
   color: white;
   font-size: 50px;
   border: none;
@@ -72,7 +73,7 @@ a, a:link, a:visited, a:hover, a:active
   height: 100px;
   width: 100px;
   border-radius: 50px;
-  background-color: rgb(134, 17, 17);
+  background-image: linear-gradient(135deg, #fc4646 0%,#c93db6 100%);
   color: white;
   font-size: 50px;
   border: none;
