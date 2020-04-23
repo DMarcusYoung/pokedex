@@ -7,10 +7,10 @@ const addYes = 'UPDATE restaurant SET num_of_yes = ? WHERE room_number = ? AND r
 
 
 module.exports = {
-  createRoom,
-  getRoomId,
-  addRestaurant,
-  getRestaurants,
-  closeRoom,
-  addYes
+    createRoom,
+    getRoomId,
+    addRestaurant,
+    getRestaurants,
+    closeRoom,
+    addYes,
 };
