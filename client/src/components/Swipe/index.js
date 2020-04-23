@@ -11,9 +11,9 @@ class Swipe extends Component {
       <div className="card">
         <Restaurant />
 
-        <Link to="/lobby">
+        <Link to="/match">
           <button className="backBtn">
-            Back
+            Match
           </button>
         </Link>
         
