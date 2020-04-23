@@ -28,9 +28,9 @@ class Create extends Component {
           </div>
         </form>
 
-        <button className="decideBtn">
+        <button className="decideBtn" id="createSession">
           Create
-          </button>
+        </button>
 
         <Link to="/lobby">
           <button className="backBtn">

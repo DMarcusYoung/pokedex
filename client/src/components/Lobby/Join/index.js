@@ -29,6 +29,12 @@ class Join extends Component {
           </div>
         </form>
 
+        <Link to="/swipe">
+          <button className="decideBtn" id="joinSession">
+            Join
+          </button>
+        </Link>
+
         <Link to="/lobby">
           <button className="backBtn">
             Back
