@@ -1,5 +1,4 @@
 import App from '../../client/src/./App.js'
-import axios from 'axios'
 
 axios.get('https://api.yelp.com/v3/businesses/search', {
 
