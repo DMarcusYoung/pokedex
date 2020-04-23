@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 class Join extends Component {
 
   state = {
-    input: ""
+    joinCode: ""
   };
 
-  handleInputChange = (e) => {
+  handleJoinCode = (e) => {
     const { value } = e.target;
-    this.setState({ input: value });
+    this.setState({ joinCode: value });
   };
 
   render() {
@@ -18,17 +18,21 @@ class Join extends Component {
       <div className="card">
         <h1>JOIN</h1>
 
+        {/* Join code input box */}
         <form>
           <div>
             <input
-            className="formBox"
-              onChange={this.handleInputChange}
-              value={this.state.input}
+              id="joinCode"
+              className="formBox"
+              onChange={this.handleJoinCode}
+              value={this.state.joinCode}
+              placeholder="Session Code"
               input type="number"
             />
           </div>
         </form>
 
+        {/* Joins another player */}
         <Link to="/swipe">
           <button className="decideBtn" id="joinSession">
             Join
