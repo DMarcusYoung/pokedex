@@ -21,5 +21,3 @@ app.use(routes);
 
 // eslint-disable-next-line no-console
 app.listen(PORT, () => console.log(`Port started on port: ${PORT}`));
-
-//testing git push

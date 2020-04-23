@@ -1,6 +1,6 @@
 const connection = require('../config/connection');
 // Placeholder for query files that will be in models
-const chickenTinderQueries = require();
+const chickenTinderQueries = require('../models/chickenTinderQueries/chickenTinderQueries');
 
 module.exports = {
     // Used when user presses Create in the lobby
@@ -11,7 +11,7 @@ module.exports = {
         const { roomId } = req.body;
         connection.query(chickenTinderQueries.createRoom, roomId, (err) => {
             if (err) throw err;
-            return res.send('hit db');
+            return res.json(roomId);
         });
     },
     // Used when user presses Join in the lobby and enters a room Id
