@@ -1,5 +1,7 @@
 import App from '../../client/src/./App.js'
 
+const axios = require('axios');
+
 axios.get('https://api.yelp.com/v3/businesses/search', {
 
   headers: {
@@ -12,18 +14,13 @@ axios.get('https://api.yelp.com/v3/businesses/search', {
         // Create a Variable for Location based off User City Input *replace San Jose*
     location: 'San Jose, CA',
     categories: 'restauarants',
-
-  },
+  }
 
   .then((res) => { 
-
       console.log(res)
-
   })
 
   .catch((err) => { 
-
     console.log ('error')
-
   })
-})
+});
