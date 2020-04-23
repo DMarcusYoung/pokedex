@@ -28,15 +28,18 @@ class Create extends Component {
           </div>
         </form>
 
-        <button className="decideBtn" id="createSession">
-          Create
+        <Link to="/swipe">
+          <button className="decideBtn" id="createSession">
+            Create
         </button>
+        </Link>
 
         <Link to="/lobby">
           <button className="backBtn">
             Back
           </button>
         </Link>
+        
       </div >
     )
   }
