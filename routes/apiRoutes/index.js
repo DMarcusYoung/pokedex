@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const chickenTinderController = require('../../controllers/chickenTinderController')
+const chickenTinderController = require('../../controllers/chickenTinderController');
 
 router.route('/room')
     .get(chickenTinderController.getRoomId)
