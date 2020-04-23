@@ -3,10 +3,12 @@ const chickenTinderController = require('../../controllers/chickenTinderControll
 
 router.route('/room')
     .get(chickenTinderController.getRoomId)
-    .post(chickenTinderController.createRoom);
+    .post(chickenTinderController.createRoom)
+    .patch(chickenTinderController.closeRoom);
 
 router.route('/restaurant')
     .get(chickenTinderController.getRestaurants)
-    .post(chickenTinderController.addRestaurant);
+    .post(chickenTinderController.addRestaurant)
+    .patch(chickenTinderController.addYes);
 
 module.exports = router;
