@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { Component } from "react";
 
-const Decide = props => {
-  return (
+class Decide extends Component {
+
+  render() {
+    return (
 
       <div>
-<button className="yesBtn">O</button>
-<button className="noBtn">X</button>
+        <button className="noBtn">X</button>
+        <button className="yesBtn">O</button>
       </div>
-  )
+    )
+  }
 };
 
 export default Decide;
