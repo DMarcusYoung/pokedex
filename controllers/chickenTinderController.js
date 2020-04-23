@@ -47,7 +47,7 @@ module.exports = {
             return res.json(restaurants);
         });
     },
-
+    // Used when either user says yes to a restaurant
     addYes: (req, res) => {
         connection.query(chickenTinderQueries.addYes, (err) => {
             if (err) throw err;
