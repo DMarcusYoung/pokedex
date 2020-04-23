@@ -1,12 +1,45 @@
-import React from 'react';
+import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 
-const Create = props => {
-  return (
+class Create extends Component {
 
-    <div>
-      <button className="createBtn">Create</button>
-    </div>
-  )
+  state = {
+    input: ""
+  };
+
+  handleInputChange = (e) => {
+    const { value } = e.target;
+    this.setState({ input: value });
+  };
+
+  render() {
+    return (
+
+      <div className="card">
+        <h1>CREATE A ROOM</h1>
+        <form>
+          <div>
+            <input
+              className="formBox"
+              onChange={this.handleInputChange}
+              value={this.state.input}
+              input type="text"
+            />
+          </div>
+        </form>
+
+        <button className="decideBtn" id="createSession">
+          Create
+        </button>
+
+        <Link to="/lobby">
+          <button className="backBtn">
+            Back
+          </button>
+        </Link>
+      </div >
+    )
+  }
 };
 
 export default Create;

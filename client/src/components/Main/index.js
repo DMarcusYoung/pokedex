@@ -1,22 +1,22 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 
-import Restaurant from './Restaurant';
-import Decide from './Decide';
-
-class Swipe extends Component {
+class Main extends Component {
 
   render() {
     return (
 
-
+      <Link to="/lobby">
       <div className="card">
-        <Restaurant />
-        <Decide />
+
+          <h1 className="main">CHICKEN
+          tinder</h1>
+
 
       </div>
+      </Link>
     )
   }
 };
 
-export default Swipe;
+export default Main;
