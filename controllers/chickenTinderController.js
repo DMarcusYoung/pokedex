@@ -22,6 +22,13 @@ module.exports = {
             return res.json(roomId);
         });
     },
+    // Used when 2nd user joins room, prevents anyone else from joining if equal to two
+    closeRoom: (req, res) => {
+        connection.query(chickenTinderQueries.closeRoom, (err) => {
+            if (err) throw err;
+            return res.send();
+        });
+    },
     // Used when Create user enters a city for to find restaurants
     // Adds a restaurant to the db
     // May possibly be able to do all restaurants at the same time depending on api
@@ -40,4 +47,12 @@ module.exports = {
             return res.json(restaurants);
         });
     },
+
+    addYes: (req, res) => {
+        connection.query(chickenTinderQueries.addYes, (err) => {
+            if (err) throw err;
+            return res.send();
+        });
+    },
+
 };
