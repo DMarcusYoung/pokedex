@@ -14,6 +14,12 @@ class Swipe extends Component {
         <Restaurant />
         <Decide />
 
+        <Link to="/lobby">
+          <button className="backBtn">
+            Back
+          </button>
+        </Link>
+        
       </div>
     )
   }
