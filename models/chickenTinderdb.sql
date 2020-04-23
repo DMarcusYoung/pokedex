@@ -13,8 +13,9 @@ CREATE TABLE  room (
 
 CREATE TABLE restaurants (
     id INT AUTO_INCREMENT NOT NULL,
-    room_id INT NOT NULL,
+    room_number INT NOT NULL,
     restaurant_name VARCHAR(255),
+    restaurant_image_url VARCHAR(255),
     num_of_yes INT DEFAULT 0,
     PRIMARY KEY(id)
 );
