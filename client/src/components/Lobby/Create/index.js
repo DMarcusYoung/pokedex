@@ -18,7 +18,8 @@ class Create extends Component {
     this.setState({ sessionCode: value });
   };
   handleCreate = () => {
-    axios.post('/api/room', {room_number: this.state.sessionCode})
+    axios.post('/api/room', {roomId: this.state.sessionCode})
+
     // get request to Yelp Api for restaurant data
     // axios.post('/api/restaurants')
     console.log('hit')
