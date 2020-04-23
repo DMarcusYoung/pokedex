@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
+import axios from "axios";
 
 class Create extends Component {
 
@@ -16,6 +17,12 @@ class Create extends Component {
     const { value } = e.target;
     this.setState({ sessionCode: value });
   };
+  handleCreate = () => {
+    axios.post('/api/room', {room_number: this.state.sessionCode})
+    // get request to Yelp Api for restaurant data
+    // axios.post('/api/restaurants')
+    console.log('hit')
+  }
 
   render() {
     return (
@@ -53,7 +60,7 @@ class Create extends Component {
 
         {/* Creates a session code */}
         <Link to="/swipe">
-          <button className="decideBtn" id="createSession">
+          <button className="decideBtn" onClick={this.handleCreate} id="createSession">
             Create
         </button>
         </Link>

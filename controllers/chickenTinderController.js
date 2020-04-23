@@ -11,7 +11,7 @@ module.exports = {
         const { roomId } = req.body;
         connection.query(chickenTinderQueries.createRoom, roomId, (err) => {
             if (err) throw err;
-            return res.send();
+            return res.send('hit db');
         });
     },
     // Used when user presses Join in the lobby and enters a room Id
@@ -47,7 +47,7 @@ module.exports = {
             return res.json(restaurants);
         });
     },
-
+    // Used when either user says yes to a restaurant
     addYes: (req, res) => {
         connection.query(chickenTinderQueries.addYes, (err) => {
             if (err) throw err;
