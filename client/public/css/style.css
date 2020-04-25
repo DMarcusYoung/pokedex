@@ -5,8 +5,8 @@ font-family: 'Montserrat', sans-serif;
 }
 
 body {
-  background-image: linear-gradient(135deg, #6bb7ff 0%,#56145c 100%);
-font-family: 'Montserrat', sans-serif;
+  background-image: linear-gradient(135deg, #a56dbb 0%,#eb5d5d 100%);
+  font-family: 'Montserrat', sans-serif;
 }
 
 .container {
@@ -16,7 +16,7 @@ font-family: 'Montserrat', sans-serif;
 }
 
 .card {
-  height: 800px;
+  height: 850px;
   width: 500px;
   background-color: rgb(255, 255, 255);
   text-align: center;

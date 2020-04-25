@@ -12,7 +12,7 @@ class Match extends Component {
   render() {
     return (
 
-      <div className="card">
+      <div className="card animated pulse delay-1s">
 
         <h1>You have a Match!</h1>
 
