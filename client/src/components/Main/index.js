@@ -7,7 +7,7 @@ class Main extends Component {
     return (
 
       <Link to="/lobby">
-      <div className="card">
+      <div className="card animated pulse delay-1s">
 
           <h1 className="main">CHICKEN
           tinder</h1>

@@ -10,13 +10,14 @@ class Restaurant extends Component {
 
   nextRestaurant = () => {
     this.setState({ name: this.state.name + 'next' });
-};
+  };
 
   render() {
     return (
 
       <div>
 
+        <h2 className="sessionCode">Session Code</h2>
         <h1>{this.state.name}</h1>
         <h2>{this.state.rating}</h2>
         <p className="picture">{this.state.picture}</p>
