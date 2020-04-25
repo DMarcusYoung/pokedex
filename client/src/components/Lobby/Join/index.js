@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
+import axios from "axios";
 
 class Join extends Component {
 
@@ -11,6 +12,19 @@ class Join extends Component {
     const { value } = e.target;
     this.setState({ joinCode: value });
   };
+
+  handleJoin = e => {
+    axios.get('/api/room').then(res => {
+      console.log(res.data)
+      for(let i in res.data){
+        if(parseInt(this.state.joinCode) === res.data[i].room_number){
+          this.props.history.push('/swipe')
+          break;
+        }
+      }
+      console.log('invalid session code')
+    })
+  }
 
   render() {
     return (
@@ -33,11 +47,9 @@ class Join extends Component {
         </form>
 
         {/* Joins another player */}
-        <Link to="/swipe">
-          <button className="decideBtn" id="joinSession">
+          <button className="decideBtn" onClick={this.handleJoin} id="joinSession">
             Join
           </button>
-        </Link>
 
         <Link to="/lobby">
           <button className="backBtn">

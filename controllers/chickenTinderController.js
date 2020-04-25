@@ -1,5 +1,4 @@
 const connection = require('../config/connection');
-// Placeholder for query files that will be in models
 const chickenTinderQueries = require('../models/chickenTinderQueries/chickenTinderQueries');
 
 module.exports = {
@@ -7,7 +6,6 @@ module.exports = {
     // The created roomId will be added to the db
     createRoom: (req, res) => {
         // roomId placeholder for roomId created in the front end and sent as a post request
-        // chickenTinderQueries.createRoom is placeholder for the corresponding query
         const { roomId } = req.body;
         connection.query(chickenTinderQueries.createRoom, roomId, (err) => {
             if (err) throw err;
