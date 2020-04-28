@@ -12,13 +12,21 @@ class Match extends Component {
   render() {
     return (
 
-      <div className="card animated pulse delay-1s">
+      <div className="card">
 
         <h1>You have a Match!</h1>
 
-        <h1>{this.state.name}</h1>
-        <h2>{this.state.rating}</h2>
-        <p className="picture">{this.state.picture}</p>
+        <h2 className="animated fadeIn delay-0s slower">
+          {this.state.name}
+        </h2>
+
+        <h3 className="animated fadeIn delay-0s slower">
+          {this.state.rating}
+        </h3>
+
+        <p className="picture animated fadeIn delay-0s slower">
+          {this.state.picture}
+        </p>
 
         <Link to="/lobby">
           <button className="backBtn">
