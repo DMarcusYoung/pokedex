@@ -54,7 +54,7 @@ module.exports = {
     },
     getRestaurantsByRoomId: (req, res) => {
         const { roomId } = req.params;
-        connection.query(chickenTinderQueries.getRestaurantsByRoomId, roomId, (err, restaurants) => { 
+        connection.query(chickenTinderQueries.getRestaurantsByRoomId, roomId, (err, restaurants) => {
             if (err) throw err;
             return res.json(restaurants);
         });
