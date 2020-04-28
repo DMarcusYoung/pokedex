@@ -1,4 +1,3 @@
-
 INSERT INTO room (room_number, closed)
 VALUES (111, 'n'),
 		(222, 'n'),
