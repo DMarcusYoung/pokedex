@@ -11,4 +11,8 @@ router.route('/restaurant')
     .post(chickenTinderController.addRestaurant)
     .patch(chickenTinderController.addYes);
 
+
+router.route('/restaurant/:roomId')
+    .get(chickenTinderController.getRestaurantsByRoomId);
+
 module.exports = router;
