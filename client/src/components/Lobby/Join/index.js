@@ -14,16 +14,24 @@ class Join extends Component {
   };
 
   handleJoin = e => {
-    axios.get('/api/room').then(res => {
-      console.log(res.data)
-      for(let i in res.data){
-        if(parseInt(this.state.joinCode) === res.data[i].room_number){
-          this.props.history.push('/swipe')
-          break;
-        }
-      }
-      console.log('invalid session code')
-    })
+    axios.get(`/api/restaurant/${this.state.joinCode}`)
+      .then(response => {
+        console.log(response)
+        const data = response.data;
+        const restaurant = data[0];
+        this.props.history.push(`/swipe/${restaurant.room_number}`);
+      })
+    // axios.get('/api/room').then(res => {
+    //   console.log(res.data)
+    //   for(let i in res.data){
+    //     if(parseInt(this.state.joinCode) === res.data[i].room_number){
+
+    //       this.props.history.push('/swipe')
+    //       break;
+    //     }
+    //   }
+    //   console.log('invalid session code')
+    // })
   }
 
   render() {
@@ -41,7 +49,7 @@ class Join extends Component {
               onChange={this.handleJoinCode}
               value={this.state.joinCode}
               placeholder="Session Code"
-              input type="number"
+              type="number"
             />
           </div>
         </form>

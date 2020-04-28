@@ -1,3 +1,5 @@
+//  Make sure to npm i dotenv
+require('dotenv').config()
 const express = require('express');
 
 const PORT = process.env.PORT || 3001;

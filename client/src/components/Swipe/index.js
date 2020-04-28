@@ -7,7 +7,19 @@ import Create from './../Lobby/Create';
 
 class Swipe extends Component {
 
+  state = {
+    restaurants: []
+  }
+
+  componentDidMount() {
+    axios.get(`/api/restaurant/${this.props.match.params.roomNumber}`)
+      .then(({data}) => {
+        this.setState({ restaurants: data });
+      })
+  }
+
   render() {
+    console.log(this.state.restaurants);
     return (
 
       <div className="card">

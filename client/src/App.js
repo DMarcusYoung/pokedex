@@ -17,7 +17,7 @@ const App = props => (
       <Route exact path="/lobby" component={Lobby} />
       <Route exact path="/create" component={Create} />
       <Route exact path="/join" component={Join} />
-      <Route exact path="/swipe" component={Swipe} />
+      <Route exact path="/swipe/:roomNumber" component={Swipe} />
       <Route exact path="/match" component={Match} />
 
     </div>
