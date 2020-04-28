@@ -54,31 +54,9 @@ module.exports = {
     },
     getRestaurantsByRoomId: (req, res) => {
         const { roomId } = req.params;
-        //'SELECT * FROM restaurants INNER JOIN room WHERE ?;';
         connection.query(chickenTinderQueries.getRestaurantsByRoomId, roomId, (err, restaurants) => {
             if (err) throw err;
             return res.json(restaurants);
         });
-    }
-    // getYelpRequest: (req, res) => {
-    //     // (`${API_BASE_URL}${path}?${query}`, { 
-    //     //     headers: { 
-    //     //         Authorization: `Bearer ${BEARER_TOKEN}`,
-    //     //         Origin: 'localhost',
-    //     //         withCredentials: true,
-    //     //     }
-    //     // });
-
-
-
-    //     axios.get(`${process.env.API_BASE_URL}`, { 
-    //         headers: { 
-    //             Authorization: `Bearer ${process.env.BEARER_TOKEN}`,
-    //             Origin: 'localhost',
-    //             withCredentials: true,
-    //         }
-    //     }).then(response => {
-    //         res.json(response.`data);
-    //     })
-    // }
+    },
 };
