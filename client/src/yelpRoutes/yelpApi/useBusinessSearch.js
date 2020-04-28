@@ -5,7 +5,7 @@ export function useBusinessSearch(term, location) {
     const [businesses, setBusinesses] = useState([]);
     const [amountResults, setAmountResults] = useState();
     const [searchParams, setSearchParams]= useState({term, location});
-
+// TERM = ie; Restaurants, Bars, Breakfast // LOcation = City & State
     useEffect(() => { 
         setBusinesses([]);
         const fetchData = async () => { 
