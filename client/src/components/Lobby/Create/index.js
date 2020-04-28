@@ -29,7 +29,7 @@ class Create extends Component {
     return (
 
       <div className="card">
-        <h1>CREATE A ROOM</h1>
+        <h1>CREATE SESSION</h1>
 
         {/* Input for city */}
         <form>
