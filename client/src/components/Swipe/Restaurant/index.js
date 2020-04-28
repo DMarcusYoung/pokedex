@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import {useBusinessSearch} from '../../../../../routes/yelpRoutes/yelpApi/useBusinessSearch';
 class Restaurant extends Component {
 
   state = {
@@ -28,5 +28,5 @@ class Restaurant extends Component {
     )
   }
 };
-
+console.log (useBusinessSearch);
 export default Restaurant;
