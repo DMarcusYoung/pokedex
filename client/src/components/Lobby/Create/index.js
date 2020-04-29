@@ -40,7 +40,7 @@ class Create extends Component {
               onChange={this.handleCity}
               value={this.state.city}
               placeholder="City"
-              input type="text"
+              type="text"
             />
           </div>
         </form>
@@ -54,7 +54,7 @@ class Create extends Component {
               onChange={this.handleSessionCode}
               value={this.state.sessionCode}
               placeholder="Session Code"
-              input type="number"
+              type="number"
             />
           </div>
         </form>
