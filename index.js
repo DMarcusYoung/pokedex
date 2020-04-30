@@ -1,6 +1,7 @@
 //  Make sure to npm i dotenv
-// require('dotenv').config()
+require('dotenv').config()
 const express = require('express');
+const cors = require('cors');
 
 const PORT = process.env.PORT || 3001;
 
@@ -13,6 +14,7 @@ if (process.env.NODE_ENV === 'production') {
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 // Declare routes right here.
 // eslint-disable-next-line import/no-unresolved

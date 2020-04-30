@@ -12,12 +12,13 @@ class Swipe extends Component {
     counter: 0
   }
 
-  componentDidMount() {
-    axios.get(`/api/restaurant/${this.props.match.params.roomNumber}`)
-      .then(({ data }) => {
-        this.setState({ restaurants: data });
-      })
-  }
+  // componentDidMount() {
+  //   axios.get(`/api/restaurant/${this.props.match.params.roomNumber}`)
+  //     .then(({ data }) => {
+  //       this.setState({ restaurants: data });
+  //     })
+  // }
+  
   renderRestaurants() {
     if (this.state.counter > this.state.restaurants.length) {
       this.setState({ counter: 0 })
