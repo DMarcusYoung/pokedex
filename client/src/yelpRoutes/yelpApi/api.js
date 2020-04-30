@@ -11,5 +11,5 @@ export function get(path, queryParams) {
         }
     });
 }
-get();
+
 // to make the request into a query including the API key.

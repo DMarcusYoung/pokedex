@@ -17,7 +17,7 @@ class RestaurantList extends Component {
         this.getRestaurantsFromApi('San Francisco')
     }
 
-    componentDIdUpdate (prevProps, prevState) { 
+    componentDidUpdate (prevProps, prevState) { 
         if(this.props.searchLocationQuery !== prevProps.searchLocationQuery) { 
             this.setState({ 
                 results: [],
@@ -35,9 +35,9 @@ getRestaurantsFromApi = (locationSearched) => {
     
     headers: {
         //to get the API from the .env USE THIS!!!
-        // Authorization: `Bearer ${process.env.YELP_API_KEY}`
+        Authorization: `Bearer ${process.env.BEARER_TOKEN}`
         //This is just for testing DO NOT PUSH THIS TO GITHUB
-        Authorization: `Bearer 4oqtYN6ntFys9IoVhDhYyWKrCj2UOzDvbrTm29c7UqQ_MCjgtI4zHb3P6m6sg_jupRk-wTim5vRojSpDkukulu9tOv3haZ9YXlCKkZGrPCKGRH3y6AJhBkATlROlXnYx`
+        //Authorization: `Bearer <insert API key here for test>`
     },
     //option params passed to API call to retrieve only restaurants, can change to w/e like bars, food, dinner, breakfast, chinese.
     params: {
@@ -45,15 +45,16 @@ getRestaurantsFromApi = (locationSearched) => {
     }
     })
     .then((res) => {
-        console.log(res.data.businesses)
+        console.log(res.data.businesses);
         //change the state of App to reflect on the result we are given from the API
         //at the same time, setting the loading state to false 
         this.setState({ results: res.data.businesses, loading: false })
     })
     .catch((err) => {
         // error for if nothing is found.
-        this.setState({ errorState: `Sorry we coudln't find information related to the location you search, do you want to try something else?`, loading: false })
+        this.setState({ errorState: `Nothing found, search again`, loading: false })
     })
-}
 
-console.log(getRestaurantsFromApi);
+ export default RestaurantList   
+}
+}
