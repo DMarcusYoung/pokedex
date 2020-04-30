@@ -12,12 +12,13 @@ class Swipe extends Component {
     counter: 0
   }
 
-  componentDidMount() {
-    axios.get(`/api/restaurant/${this.props.match.params.roomNumber}`)
-      .then(({ data }) => {
-        this.setState({ restaurants: data });
-      })
-  }
+  // componentDidMount() {
+  //   axios.get(`/api/restaurant/${this.props.match.params.roomNumber}`)
+  //     .then(({ data }) => {
+  //       this.setState({ restaurants: data });
+  //     })
+  // }
+  
   renderRestaurants() {
     if (this.state.counter > this.state.restaurants.length) {
       this.setState({ counter: 0 })
@@ -26,7 +27,8 @@ class Swipe extends Component {
       console.log(this.state.restaurants[this.state.counter])
       return <Restaurant 
               rest={this.state.restaurants[this.state.counter]} 
-              clickNext={this.clickNext}
+              handleYes={this.handleYes}
+              handleNo={this.handleNo}
               />
     }
   }
@@ -36,10 +38,15 @@ class Swipe extends Component {
   }
 
   handleYes =() => {
-    // pass in restaurant id 
-    // axios.post
+
+    axios.patch('api/restaurant', )
     this.clickNext();
   }
+
+  handleNo =() => {
+    this.clickNext();
+  }
+
 
   render() {
     console.log(this.state.restaurants);
