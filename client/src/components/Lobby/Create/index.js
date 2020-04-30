@@ -18,7 +18,7 @@ class Create extends Component {
   };
   handleCreate = () => {
     axios.post('/api/room', {roomId: this.state.sessionCode})
-
+    // console.log(useBusinessSearch('restaurants', 'Berkeley'))
     // get request to Yelp Api for restaurant data
     // axios.post('/api/restaurants')
     console.log('hit')
@@ -59,7 +59,7 @@ class Create extends Component {
         </form>
 
         {/* Creates a session code */}
-        <Link to="/swipe">
+        <Link to={`/swipe/${this.state.sessionCode}`}>
           <button className="decideBtn" onClick={this.handleCreate} id="createSession">
             Create
         </button>
