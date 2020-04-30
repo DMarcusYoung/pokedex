@@ -10,6 +10,7 @@ CREATE TABLE restaurants (
     room_number INT NOT NULL,
     restaurant_name VARCHAR(255),
     restaurant_image_url VARCHAR(255),
+    rating INT,
     num_of_yes INT DEFAULT 0,
     PRIMARY KEY(id)
 );
