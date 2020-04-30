@@ -6,16 +6,21 @@ class Main extends Component {
   render() {
     return (
 
-      <Link to="/lobby">
-        <div className="card">
 
-          <h1 className="main animated fadeIn delay-0s slower">
-            <img src="../../../images/logo.png" width="350px" />
-            CHICKEN
-          tinder</h1>
+      <div className="card">
+        <Link to="/lobby">
 
-        </div>
-      </Link>
+          <div className="mainPage animated fadeIn delay-0s slower">
+            <img className="logo" src="../../../images/logo.png" alt="logo" />
+            <h1 className="main">
+              chicken</h1>
+              <h1 className="main">
+              tinder</h1>
+          </div>
+
+        </Link>
+      </div>
+
     )
   }
 };
