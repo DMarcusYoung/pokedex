@@ -26,7 +26,8 @@ class Swipe extends Component {
       console.log(this.state.restaurants[this.state.counter])
       return <Restaurant 
               rest={this.state.restaurants[this.state.counter]} 
-              clickNext={this.clickNext}
+              handleYes={this.handleYes}
+              handleNo={this.handleNo}
               />
     }
   }
@@ -36,10 +37,15 @@ class Swipe extends Component {
   }
 
   handleYes =() => {
-    // pass in restaurant id 
-    // axios.post
+
+    axios.patch('api/restaurant', )
     this.clickNext();
   }
+
+  handleNo =() => {
+    this.clickNext();
+  }
+
 
   render() {
     console.log(this.state.restaurants);
