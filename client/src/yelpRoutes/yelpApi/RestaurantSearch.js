@@ -55,5 +55,6 @@ getRestaurantsFromApi = (locationSearched) => {
         this.setState({ errorState: `Nothing found, search again`, loading: false })
     })
 
-    export default RestaurantList
+ export default RestaurantList   
+}
 }
