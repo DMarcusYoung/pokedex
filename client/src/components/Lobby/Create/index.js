@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import axios from "axios";
+import RestaurantList from "./../../../yelpRoutes/yelpApi/restsearch"
+
 class Create extends Component {
 
   state = {
@@ -21,7 +23,6 @@ class Create extends Component {
     // console.log(useBusinessSearch('restaurants', 'Berkeley'))
     // get request to Yelp Api for restaurant data
     // axios.post('/api/restaurants')
-    console.log('hit')
   }
 
   render() {
@@ -59,11 +60,9 @@ class Create extends Component {
         </form>
 
         {/* Creates a session code */}
-        <Link to={`/swipe/${this.state.sessionCode}`}>
           <button className="decideBtn" onClick={this.handleCreate} id="createSession">
             Create
         </button>
-        </Link>
 
         <Link to="/lobby">
           <button className="backBtn">
@@ -71,6 +70,7 @@ class Create extends Component {
           </button>
         </Link>
 
+        <RestaurantList />
       </div >
     )
   }
