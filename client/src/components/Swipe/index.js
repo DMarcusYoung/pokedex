@@ -23,8 +23,8 @@ class Swipe extends Component {
     return (
 
       <div className="card">
-        <h4 className="sessionCode">Session Code</h4>
-        <Restaurant />
+        <h4 className="sessionCode">Session Code: </h4>
+        <Restaurant restaurantList = {this.state.restaurants}/>
 
         <Link to="/match">
           <button className="backBtn">
