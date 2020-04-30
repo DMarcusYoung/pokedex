@@ -1,5 +1,7 @@
 import React from "react";
-import RestaurantList from "./../../../yelpRoutes/yelpApi/restsearch";
+// import RestaurantList from "./../../../yelpRoutes/yelpApi/restsearch";
+
+
 function Restaurant(props) {
   console.log(props)
   return (
@@ -8,7 +10,7 @@ function Restaurant(props) {
       <h2>{props.rest && props.rest.restaurant_name}</h2>
       <h3>{props.rest && props.rest.rating}</h3>
 
-        <img className="picture" src={props.rest && props.rest.restaurant_image_url}/>
+        <img className="picture" src={props.rest && props.rest.restaurant_image_url} alt=""/>
 
       <div><button className="noBtn" onClick={() => props.handleNo()}>X</button>
       <button className="yesBtn" onClick={() => props.handleYes(props.rest.id)} >O</button>
