@@ -7,12 +7,12 @@ function Restaurant(props) {
 
       <h2>{props.rest && props.rest.restaurant_name}</h2>
       <h3>{props.rest && props.rest.id}</h3>
-      <p className="picture">
-        <img src={props.rest && props.rest.restaurant_image_url}/>
-      </p>
 
-      <button className="noBtn" onClick={() => props.clickNext()}>X</button>
+        <img className="picture" src={props.rest && props.rest.restaurant_image_url}/>
+
+      <div><button className="noBtn" onClick={() => props.clickNext()}>X</button>
       <button className="yesBtn" onClick={() => props.clickNext()} >O</button>
+      </div>
 
     </div>
   )

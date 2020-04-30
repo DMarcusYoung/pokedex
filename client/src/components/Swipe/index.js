@@ -47,7 +47,7 @@ class Swipe extends Component {
 
       <div className="card">
         <h4 className="sessionCode">Session Code: </h4>
-        {this.renderRestaurants()};
+        {this.renderRestaurants()}
 
         <Link to="/match">
           <button className="backBtn">
