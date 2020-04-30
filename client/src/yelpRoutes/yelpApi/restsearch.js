@@ -14,20 +14,20 @@ export default class RestarauntList extends React.Component {
                 authorization: BEARER_TOKEN
             },
             params: {
-                location: 'San Jose',
-                term: 'Food'
+                location: 'Oakland',
+                term: 'Restaurants'
             }
         }).then(res => {
             console.log(res.data.businesses);
         });
     }
 
+    
     render() {
         return (
             <div></div>
         )
 
     }
-
-   
 }
+
