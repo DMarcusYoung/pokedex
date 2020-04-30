@@ -17,10 +17,25 @@ class Join extends Component {
     axios.get(`/api/restaurant/${this.state.joinCode}`)
       .then(response => {
         console.log(response)
+        // collects all the restaurants with the joincode/romm_number entered along with room table data
         const data = response.data;
+        // gets the first restaurant object in the array 
         const restaurant = data[0];
+        // conditional to check if the room number entered is still an open session
+        if (restaurant.closed === 'n') {
+          // pulls the room_number from the first item in the array to create the dynamic url
         this.props.history.push(`/swipe/${restaurant.room_number}`);
+        // if the room number is closed and there is a match, then show the match
+        } else {
+          // not sure if want to do another check if the room number is closed AND there was NO match
+          this.props.history.push(`/match`);
+        }
       })
+      // If a session code is entered that does not exist
+      .catch(function (error) {
+        console.log(error);
+        alert('The code you entered is invalid.  Please try again.')
+      });
     // axios.get('/api/room').then(res => {
     //   console.log(res.data)
     //   for(let i in res.data){
