@@ -20,7 +20,7 @@ module.exports = {
             return res.json(roomId);
         });
     },
-    // Used when 2nd user joins room, prevents anyone else from joining if equal to two
+    // Used when there is a match so the room cannot be entered again
     closeRoom: (req, res) => {
         connection.query(chickenTinderQueries.closeRoom, (err) => {
             if (err) throw err;
@@ -47,8 +47,19 @@ module.exports = {
     },
     // Used when either user says yes to a restaurant
     addYes: (req, res) => {
-        connection.query(chickenTinderQueries.addYes, (err) => {
-            if (err) throw err;
+        const { restId } = req.body;
+        console.log(restId);
+        connection.query(chickenTinderQueries.getRestaurantByRestId, restId, (err, data) => {
+            if (err) res.json(err);
+            console.log(data);
+            if (data.num_of_yes === 0){
+// update query 1
+// value for success
+            }
+            if(data.num_of_yes ===1){
+// update query to 2
+// value for match
+            }
             return res.send();
         });
     },

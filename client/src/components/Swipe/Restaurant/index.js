@@ -13,7 +13,7 @@ function Restaurant(props) {
         <img className="picture" src={props.rest && props.rest.restaurant_image_url} alt=""/>
 
       <div><button className="noBtn" onClick={() => props.handleNo()}>X</button>
-      <button className="yesBtn" onClick={() => props.handleYes()} >O</button>
+      <button className="yesBtn" onClick={() => props.handleYes(props.rest.id)} >O</button>
       </div>
 
     </div>
