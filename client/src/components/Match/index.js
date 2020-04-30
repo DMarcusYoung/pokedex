@@ -14,17 +14,17 @@ class Match extends Component {
 
       <div className="card">
 
-        <h1 className="animated fadeInUp delay-0s">You have a Match!</h1>
+        <h1 className="animated heartBeat slow">You have a Match!</h1>
 
-        <h2 className="animated fadeIn delay-1s slow">
+        <h2 className="animated fadeIn delay-1s slower">
           {this.state.name}
         </h2>
 
-        <h3 className="animated fadeIn delay-1s slow">
+        <h3 className="animated fadeIn delay-1s slower">
           {this.state.rating}
         </h3>
 
-        <p className="picture animated fadeIn delay-1s slow">
+        <p className="picture animated fadeIn delay-1s slower">
           {this.state.picture}
         </p>
 
