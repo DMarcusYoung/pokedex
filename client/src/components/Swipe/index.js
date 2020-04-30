@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
 import axios from "axios";
 
 import Restaurant from './Restaurant';
-import Create from './../Lobby/Create';
 
 class Swipe extends Component {
 
@@ -55,12 +53,6 @@ class Swipe extends Component {
       <div className="card">
         <h4 className="sessionCode">Session Code: </h4>
         {this.renderRestaurants()}
-
-        <Link to="/match">
-          <button className="backBtn">
-            Match
-          </button>
-        </Link>
 
       </div>
     )
