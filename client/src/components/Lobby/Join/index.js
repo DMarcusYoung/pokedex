@@ -17,7 +17,7 @@ class Join extends Component {
     axios.get(`/api/restaurant/${this.state.joinCode}`)
       .then(response => {
         console.log(response)
-        // collects all the restaurants with the joincode/romm_number entered along with room table data
+        // collects all the restaurants with the joincode/room_number entered along with room table data
         const data = response.data;
         // gets the first restaurant object in the array 
         const restaurant = data[0];
