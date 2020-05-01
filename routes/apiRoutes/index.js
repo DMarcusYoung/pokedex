@@ -22,25 +22,22 @@ router.route('/restaurant')
 router.route('/restaurant/:roomId')
     .get(chickenTinderController.getRestaurantsByRoomId);
 
-
-
 router.route('/yelp')
     .post((req, res) => {
-        const { roomId, city  } = req.body;
+        const { roomId, city} = req.body;
         axios.get(`https://api.yelp.com/v3/businesses/search`, {
             headers: {
                 authorization: process.env.BEARER_TOKEN
             },
             params: {
                 location: city,
-                term: 'Restaurants'
-            }
+                term: 'Restaurants',
+            },
         }).then(response => {
-          
             const restaurantData = response.data.businesses.map(restaurant => { return {restaurant_name: restaurant.name, restaurant_image_url: restaurant.image_url, rating: restaurant.rating }});
             // console.log(response.data);
             let query = `INSERT INTO restaurants (room_number, restaurant_name, restaurant_image_url, rating) VALUES (?, ?, ?, ?)`;
-            for(let i = 0; i < restaurantData.length -1; i++) {
+            for (let i = 0; i < restaurantData.length -1; i++) {
                 query += ' (?,?,?,?)';
             }
             query += ' (?,?,?,?);';

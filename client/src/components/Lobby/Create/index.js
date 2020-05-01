@@ -104,8 +104,6 @@ class Create extends Component {
             Back
           </button>
         </Link>
-
-        <RestaurantList />
       </div >
     )
   }
