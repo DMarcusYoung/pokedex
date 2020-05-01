@@ -21,6 +21,7 @@ class Join extends Component {
         const data = response.data;
         // gets the first restaurant object in the array 
         const restaurant = data[0];
+        console.log(restaurant)
         // conditional to check if the room number entered is still an open session
         if (restaurant.closed === 'n') {
           // pulls the room_number from the first item in the array to create the dynamic url

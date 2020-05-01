@@ -20,6 +20,8 @@ class Create extends Component {
     const { value } = e.target;
     this.setState({ city: value });
   };
+
+
   handleSessionCode = (e) => {
     const { value } = e.target;
     this.setState({ sessionCode: value });
@@ -28,7 +30,7 @@ class Create extends Component {
   handleCreate = async () => {
     try {
       console.log("Im hit")
-      // await axios.post('/api/room', {roomId: this.state.sessionCode});
+      await axios.post('/api/room', {roomId: this.state.sessionCode});
       const data = await axios.post('/api/yelp', { roomId: this.state.sessionCode, city: this.state.city });
       console.log(data);
       this.props.history.push(`/swipe/${this.state.sessionCode}`);

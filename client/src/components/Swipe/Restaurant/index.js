@@ -1,9 +1,8 @@
 import React from "react";
-// import RestaurantList from "./../../../yelpRoutes/yelpApi/restsearch";
-
 
 function Restaurant(props) {
   console.log(props)
+
   return (
     <div>
 
