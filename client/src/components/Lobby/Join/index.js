@@ -17,12 +17,10 @@ class Join extends Component {
     e.preventDefault();
     axios.get(`/api/restaurant/${this.state.joinCode}`)
       .then(response => {
-        console.log(response)
         // collects all the restaurants with the joincode/room_number entered along with room table data
         const data = response.data;
         // gets the first restaurant object in the array 
         const restaurant = data[0];
-        console.log(restaurant)
         // conditional to check if the room number entered is still an open session
         if (restaurant.closed === 'n') {
           // pulls the room_number from the first item in the array to create the dynamic url

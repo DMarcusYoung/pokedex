@@ -28,7 +28,7 @@ class Swipe extends Component {
       rest={this.state.restaurants[this.state.counter]}
       />
     } else {
-      console.log(this.state.restaurants[this.state.counter])
+      console.log(this.state.restaurants)
       return <Restaurant
         rest={this.state.restaurants[this.state.counter]}
         handleYes={this.handleYes}
@@ -47,17 +47,12 @@ class Swipe extends Component {
   }
   
   handleYes = async (restId) => {
-
     const res = await axios.patch(`/api/restaurant`, { restId })
     console.log(res)
-
-    if (res.error !== '') {
-      console.log(res.error)
+    if (res.data === 2) {
+      this.props.history.push('/match')
     }
-    // if (res.match !== '') {
-    //   this.props.history.push('/match')
-    // }
-    if (res.success !== '') {
+    else {
       this.clickNext();
     }
   }
@@ -86,7 +81,6 @@ class Swipe extends Component {
    */
 
   render() {
-    console.log(this.state);
     return (
 
       <div className="card">

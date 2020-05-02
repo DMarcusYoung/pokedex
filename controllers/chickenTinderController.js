@@ -30,7 +30,6 @@ module.exports = {
     },
     // Used when Create user enters a city for to find restaurants
     // Adds a restaurant to the db
-    // May possibly be able to do all restaurants at the same time depending on api
     // Currently only adds restaurants to the db, might have to get them back from the db
     addRestaurant: (req, res) => {
         connection.query(chickenTinderQueries.addRestaurant, (err) => {
@@ -49,20 +48,22 @@ module.exports = {
     // Used when either user says yes to a restaurant
     addYes: (req, res) => {
         const { restId } = req.body;
-        console.log(restId);
         connection.query(chickenTinderQueries.getRestaurantByRestId, restId, (err, data) => {
             if (err) res.json(err);
-            console.log(data);
-            if (data.num_of_yes === 0) {
-// update query 1
-// value for success
-                // connection.query(chickenTinderQueries.addYes, 1, )
+            if (data[0].num_of_yes === 0) {
+                connection.query(chickenTinderQueries.addYes, [1, restId], (error) => {
+                    if (error) throw error;
+                });
             }
-            if (data.num_of_yes === 1) {
-// update query to 2
-// value for match
+            if (data[0].num_of_yes === 1) {
+                connection.query(chickenTinderQueries.addYes, [2, restId], (error) => {
+                    if (error) throw error;
+                });
             }
-            return res.send();
+            connection.query(chickenTinderQueries.getRestaurantByRestId, restId, (error, updatedData) => {
+                if (error) res.json(error);
+                res.json(updatedData[0].num_of_yes);
+            });
         });
     },
     getRestaurantsByRoomId: (req, res) => {
