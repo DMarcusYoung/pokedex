@@ -53,7 +53,10 @@ class Join extends Component {
     return (
 
       <div className="card">
-        <h1>JOIN</h1>
+                <div className="title">
+        <h3>join</h3>
+        <h3>session</h3>
+        </div>
 
         {/* Join code input box */}
         <form onSubmit={ (e) => this.handleJoin(e)}>
@@ -63,7 +66,7 @@ class Join extends Component {
               className="formBox"
               onChange={this.handleJoinCode}
               value={this.state.joinCode}
-              placeholder="Session Code"
+              placeholder="session code"
               type="number"
             />
           </div>
@@ -71,12 +74,12 @@ class Join extends Component {
 
         {/* Joins another player */}
           <button className="decideBtn" onClick={this.handleJoin} id="joinSession">
-            Join
+            join
           </button>
 
         <Link to="/lobby">
           <button className="backBtn">
-            Back
+            back
           </button>
         </Link>
       </div>
