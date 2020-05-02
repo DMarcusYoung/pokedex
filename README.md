@@ -50,14 +50,14 @@ Simply create a personal room with the city you're in, share that room code with
 ## Future Development
 
 ## Inspiration
-![Inspiration](https://github.com/DMarcusYoung/chickenTinder/blob/master/client/public/images/inspiration.JPG)
+![Inspiration](https://github.com/DMarcusYoung/chickenTinder/blob/master/client/public/images/inspiration.jpg)
 
 ## Screenshots
-![Main](https://github.com/DMarcusYoung/chickenTinder/blob/master/client/public/images/main.JPG)
-![Lobby](https://github.com/DMarcusYoung/chickenTinder/blob/master/client/public/images/lobby.JPG)
+![Main](https://github.com/DMarcusYoung/chickenTinder/blob/master/client/public/images/main.jpg)
+![Lobby](https://github.com/DMarcusYoung/chickenTinder/blob/master/client/public/images/lobby.jpg)
 ![Create](https://github.com/DMarcusYoung/chickenTinder/blob/master/client/public/images/create.JPG)
-![Swipe](https://github.com/DMarcusYoung/chickenTinder/blob/master/client/public/images/swipe.JPG)
-![Match](https://github.com/DMarcusYoung/chickenTinder/blob/master/client/public/images/match.JPG)
+![Swipe](https://github.com/DMarcusYoung/chickenTinder/blob/master/client/public/images/swipe.jpg)
+![Match](https://github.com/DMarcusYoung/chickenTinder/blob/master/client/public/images/match.jpg)
 
 ## Disclaimer
 We do not own the rights to Tinder, nor do we have permission to use its likeness.
