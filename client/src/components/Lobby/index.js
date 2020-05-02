@@ -8,13 +8,13 @@ class Lobby extends Component {
 
       <div className="card lobby">
         <Link to="/create"> <button className="decideBtn">
-          Create
+          create
           </button>
         </Link>
 
         <Link to="/join">
           <button className="decideBtn">
-            Join
+            join
           </button>
         </Link>
 

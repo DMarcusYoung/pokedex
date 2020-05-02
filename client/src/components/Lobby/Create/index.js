@@ -59,7 +59,10 @@ class Create extends Component {
     return (
 
       <div className="card">
-        <h1>CREATE SESSION</h1>
+        <div className="title">
+        <h3>create</h3>
+        <h3>session</h3>
+        </div>
 
         {/* Input for city */}
         <form>
@@ -69,7 +72,7 @@ class Create extends Component {
               className="formBox"
               onChange={this.handleCity}
               value={this.state.city}
-              placeholder="City"
+              placeholder="city"
               type="text"
             />
           </div>
@@ -83,7 +86,7 @@ class Create extends Component {
               className="formBox"
               onChange={this.handleSessionCode}
               value={this.state.sessionCode}
-              placeholder="Session Code"
+              placeholder="session code"
               type="number"
             />
           </div>
@@ -92,13 +95,13 @@ class Create extends Component {
         {/* Creates a session code */}
         {/* <Link to={`/swipe/${this.state.sessionCode}`}> */}
         <button className="decideBtn" onClick={this.handleCreate} id="createSession">
-            Create
+            create
         </button>
         {/* </Link> */}
 
         <Link to="/lobby">
           <button className="backBtn">
-            Back
+            back
           </button>
         </Link>
       </div >
