@@ -7,11 +7,11 @@ html, body {
 .container {
   display: flex;
   justify-content: center;
-  min-height: 100vh;
 }
 
 .card {
-  width: 480px;
+  width: 450px;
+  height: 800px;
   background-color: rgb(255, 255, 255);
   text-align: center;
   border-radius: 30px;
@@ -35,7 +35,7 @@ h1 {
 h2 {
   margin: 20px;
   line-height: 40px;
-  font-size: 40px;
+  font-size: 35px;
   font-weight: bolder;
   color: rgb(50, 50, 50);
 }
@@ -57,20 +57,28 @@ h4 {
   margin: auto;
   margin-top: 30px;
   margin-bottom: 20px;
-  font-size: 30px;
+  font-size: 40px;
+  font-weight: bold;
 }
 
 .picture {
-  height: 400px;
-  width: 80%;
-  overflow: hidden;
-  border-radius: 10px;
-  background-image: linear-gradient(135deg, #a56dbb -30%,#eb5d5d 130%);
-  margin: auto;
-  margin-bottom: 10px;
-  margin-top: 10px;
+  border-radius: 15px;
+  width: 96%;
+  height: 96%;
+  margin-top: 7px;
+}
+.picBox {
+  background-image: linear-gradient(135deg, #feab3a 0%,#f35626 100%);
+  height: 350px;
+  width: 350px;
+  border-radius: 20px;
 }
 
+.choices {
+  position: absolute;
+  bottom: 40px;
+  left: 50px;
+}
 .yesBtn {
   height: 100px;
   width: 100px;
@@ -80,11 +88,9 @@ h4 {
   font-size: 50px;
   border: none;
   outline: none;
-  margin: 30px;
-  margin-bottom: 0px;
-  margin-top: 20px;
+  margin-left: 60px;
+  margin-top: 50px;
 }
-
 .noBtn {
   height: 100px;
   width: 100px;
@@ -94,9 +100,8 @@ h4 {
   font-size: 50px;
   border: none;
   outline: none;
-  margin: 30px;
-  margin-bottom: 0px;
-  margin-top: 20px;
+  margin-right: 60px;
+  margin-top: 50px;
 }
 
 .decideBtn {
