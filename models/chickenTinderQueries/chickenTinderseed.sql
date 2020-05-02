@@ -3,14 +3,14 @@ VALUES (111, 'n'),
 		(222, 'n'),
         (999, 'y');
 
-INSERT INTO restaurants (room_number, restaurant_name, restaurant_image_url, rating, num_of_yes)
-VALUES (111, "Four Barrel Coffee 111 1", "http://s3-media2.fl.yelpcdn.com/bphoto/MmgtASP3l_t4tPCL1iAsCg/o.jpg", 10, 0),
-		(111, "Four Barrel Coffee 111 2", "http://s3-media2.fl.yelpcdn.com/bphoto/MmgtASP3l_t4tPCL1iAsCg/o.jpg", 20, 0),
-		(111, "Four Barrel Coffee 111 3", "http://s3-media2.fl.yelpcdn.com/bphoto/MmgtASP3l_t4tPCL1iAsCg/o.jpg", 30, 0),
-		(111, "Four Barrel Coffee 111 4", "http://s3-media2.fl.yelpcdn.com/bphoto/MmgtASP3l_t4tPCL1iAsCg/o.jpg", 40, 0),
-		(222, "Four Barrel Coffee 222 1", "http://s3-media2.fl.yelpcdn.com/bphoto/MmgtASP3l_t4tPCL1iAsCg/o.jpg", 50, 0),
-		(222, "Four Barrel Coffee 222 2", "http://s3-media2.fl.yelpcdn.com/bphoto/MmgtASP3l_t4tPCL1iAsCg/o.jpg", 60, 0),
-		(999, "Four Barrel Coffee 999 1", "http://s3-media2.fl.yelpcdn.com/bphoto/MmgtASP3l_t4tPCL1iAsCg/o.jpg", 70, 0),
-    	(999, "Four Barrel Coffee 999 2", "http://s3-media2.fl.yelpcdn.com/bphoto/MmgtASP3l_t4tPCL1iAsCg/o.jpg", 80, 1),
-		(999, "Four Barrel Coffee 999 2", "http://s3-media2.fl.yelpcdn.com/bphoto/MmgtASP3l_t4tPCL1iAsCg/o.jpg", 90, 2)        
+INSERT INTO restaurants (room_number, restaurant_name, restaurant_image_url, rating, num_of_yes, city)
+VALUES (111, "Baan Thai Restaurant", "https://s3-media3.fl.yelpcdn.com/bphoto/1B9y37pclxYmEWh0uMtESQ/o.jpg", 4, 0, "Orinda"),
+		(111, "Petra Cafe", "https://s3-media2.fl.yelpcdn.com/bphoto/JomN2PkFM0o7J_9T5SqAWQ/o.jpg", 4, 0, "Orinda"),
+		(111, "Reem's Steaks", "ttps://s3-media4.fl.yelpcdn.com/bphoto/7bSsp7yp7dLxkJUxh5INxw/o.jpg", 4, 0, "Orinda"),
+		(111, "Hanazen", "https://s3-media4.fl.yelpcdn.com/bphoto/v7qHrEAbs6JqjYVKfYqqxA/o.jpg", 5, 0, "Orinda"),
+		(222, "Serika Restaurant", "https://s3-media3.fl.yelpcdn.com/bphoto/nUiUjdxYZ5Qg0C7GfJUIRg/o.jpg", 4, 0, "Orinda"),
+		(222, "La Piazza Pizzeria Trattoria", "https://s3-media1.fl.yelpcdn.com/bphoto/CA-mvEsnJgTv2q0G2xUqDQ/o.jpg", 4, 0, "Orinda"),
+		(999, "Maya Mexican Grill", "https://s3-media2.fl.yelpcdn.com/bphoto/huNqPnGh5Kync7bEI78V6w/o.jpg", 4, 0, "Orinda"),
+    	(999, "Village Pizza", "https://s3-media4.fl.yelpcdn.com/bphoto/XnMlFC_auD6gCAT4xCSa3A/o.jpg", 3, 1, "Orinda"),
+		(999, "Four Barrel Coffee", "http://s3-media2.fl.yelpcdn.com/bphoto/MmgtASP3l_t4tPCL1iAsCg/o.jpg", 4, 2, "Orinda")       
         ;
