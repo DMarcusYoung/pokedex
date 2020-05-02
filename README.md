@@ -54,8 +54,7 @@ Simply create a personal room with the city you're in, share that room code with
 
 ## Screenshots
 ![Main](https://github.com/DMarcusYoung/chickenTinder/blob/master/client/public/images/main.jpg)
-![Lobby](https://github.com/DMarcusYoung/chickenTinder/blob/master/client/public/images/lobby.jpg)
-![Create](https://github.com/DMarcusYoung/chickenTinder/blob/master/client/public/images/create.JPG)
+![Create](https://github.com/DMarcusYoung/chickenTinder/blob/master/client/public/images/create.jpg)
 ![Swipe](https://github.com/DMarcusYoung/chickenTinder/blob/master/client/public/images/swipe.jpg)
 ![Match](https://github.com/DMarcusYoung/chickenTinder/blob/master/client/public/images/match.jpg)
 
