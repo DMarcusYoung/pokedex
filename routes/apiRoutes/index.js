@@ -33,6 +33,7 @@ router.route('/restaurant/:roomId')
 router.route('/yelp')
 .post((req, res) => {
     const { roomId, city  } = req.body;
+    console.log(roomId);
     axios.get(`https://api.yelp.com/v3/businesses/search`, {
         headers: {
             authorization: process.env.BEARER_TOKEN
@@ -43,18 +44,16 @@ router.route('/yelp')
         }
     }).then(async response => {
         const restaurantData = response.data.businesses.map(restaurant => { return  [restaurant.name, restaurant.image_url, restaurant.rating] });
-        let query = `INSERT INTO restaurants (room_number, restaurant_name, restaurant_image_url, rating) VALUES (555, ?, ?, ?);`;
-
+        let query = `INSERT INTO restaurants (room_number, restaurant_name, restaurant_image_url, rating) VALUES (?, ?, ?, ?);`;
+        console.log(roomId);
         for(let i = 0; i < restaurantData.length; i++) {
             try {
-                await connection.query(query, [...restaurantData[i]]);
+                await connection.query(query, [roomId, ...restaurantData[i]]);
             } catch (e) {
                 console.log(e);
             }
         }
-
-
-
+        res.status(200).json({ success: true });
     })
     .catch(e => {
         console.log(e);
