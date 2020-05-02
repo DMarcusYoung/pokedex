@@ -3,7 +3,6 @@ import { withRouter } from 'react-router-dom';
 import axios from "axios";
 import Restaurant from './Restaurant';
 import Match from "../Match";
-import End from "./End";
 
 class Swipe extends Component {
 
@@ -24,9 +23,7 @@ class Swipe extends Component {
       this.setState({ counter: 0 })
       this.props.history.push('/end')
     } if (this.state.restaurants.num_of_yes === 2) {
-      return <Match
-      rest={this.state.restaurants[this.state.counter]}
-      />
+      this.props.history.push(`/match/${this.state.restaurants.id}`);
     } else {
       console.log(this.state.restaurants)
       return <Restaurant
@@ -48,9 +45,9 @@ class Swipe extends Component {
   
   handleYes = async (restId) => {
     const res = await axios.patch(`/api/restaurant`, { restId })
-    console.log(res)
-    if (res.data === 2) {
-      this.props.history.push('/match')
+    console.log("I am res", res)
+    if (res.data.num_of_yes === 2) {
+      this.props.history.push(`/match/${res.data.id}`);
     }
     else {
       this.clickNext();
