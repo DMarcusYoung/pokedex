@@ -36,11 +36,11 @@ router.route('/restaurant/:roomId')
 
 router.route('/yelp')
     .post((req, res) => {
-        const { roomId, city  } = req.body;
+        const { roomId, city } = req.body;
         console.log(roomId);
         axios.get(`https://api.yelp.com/v3/businesses/search`, {
             headers: {
-                authorization: process.env.BEARER_TOKEN
+                authorization: process.env.BEARER_TOKEN,
             },
             params: {
                 location: city,

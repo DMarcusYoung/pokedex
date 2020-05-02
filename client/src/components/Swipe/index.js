@@ -50,6 +50,7 @@ class Swipe extends Component {
     const res = await axios.patch(`/api/restaurant`, { restId })
     console.log(res)
     if (res.data === 2) {
+      await axios.patch('/api/room', { restId })
       this.props.history.push('/match')
     }
     else {
