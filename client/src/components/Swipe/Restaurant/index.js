@@ -12,15 +12,14 @@ function Restaurant(props) {
       </div>
 
       <div className="choices">
-      <div className="picBorder">
-        <div className="picBox">
-          <img className="picture" src={props.rest && props.rest.restaurant_image_url} alt="" />
-        </div>
+        <div className="picBorder">
+          <div className="picBox">
+            <img className="picture" src={props.rest && props.rest.restaurant_image_url} alt="" />
+          </div>
         </div>
 
-
-        <button className="noBtn" onClick={() => props.handleNo()}>✘</button>
-        <button className="yesBtn" onClick={() => props.handleYes(props.rest.id)} >✔</button>
+        <img src="../../../../images/no.jpg" className="noBtn" onClick={() => props.handleNo()} />
+        <img src="../../../../images/yes.jpg" className="yesBtn" onClick={() => props.handleYes(props.rest.id)} />
       </div>
 
     </div>
