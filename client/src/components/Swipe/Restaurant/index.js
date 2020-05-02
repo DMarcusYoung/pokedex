@@ -12,8 +12,8 @@ function Restaurant(props) {
       </div>
 
       <div className="choices">
-      <div className="picBox"><img className="picture" src={props.rest && props.rest.restaurant_image_url} alt="" />
-      </div>
+        <div className="picBox"><img className="picture" src={props.rest && props.rest.restaurant_image_url} alt="" />
+        </div>
 
 
         <button className="noBtn" onClick={() => props.handleNo()}>X</button>
