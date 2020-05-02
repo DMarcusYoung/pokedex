@@ -6,14 +6,18 @@ const mysql = require('mysql2');
 
 const chickenTinderQueries = require('./../../models/chickenTinderQueries/chickenTinderQueries');
 
-const connection = mysql.createConnection({
+let connection;
+if (process.env.JAWSDB_URL) {
+    connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+connection = mysql.createConnection({
     host: 'localhost',
     port: 3306,
     user: 'root',
     password: 'password',
     database: 'chicken_tinder_db',
 }).promise();
-
+}
 // const API_BASE_URL = 'https://api.yelp.com/v3/businesses/search?term=restaurant';
 // SAVE THIS TO A HIDDEN FILE ** DO NOT FINISH PROJECT WITH THIS ** 
 router.route('/room')
