@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import axios from "axios";
 import Restaurant from './Restaurant';
 import Match from "../Match";
+import End from "./End";
 
 class Swipe extends Component {
 
@@ -21,9 +22,7 @@ class Swipe extends Component {
   renderRestaurants() {
     if (this.state.counter > 19) {
       this.setState({ counter: 0 })
-      alert("You have reached the last restaurant")
-      this.props.history.push(`/lobby`);
-
+      this.props.history.push('/end')
     } if (this.state.restaurants.num_of_yes === 2) {
       return <Match
       rest={this.state.restaurants[this.state.counter]}
