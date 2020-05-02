@@ -19,10 +19,11 @@ class Swipe extends Component {
   }
 
   renderRestaurants() {
-    if (this.state.counter > this.state.restaurants.length) {
+    if (this.state.counter > 19) {
       this.setState({ counter: 0 })
+      alert("You have reached the last restaurant")
       this.props.history.push(`/lobby`);
-      // this.renderRestaurants()
+
     } if (this.state.restaurants.num_of_yes === 2) {
       return <Match
       rest={this.state.restaurants[this.state.counter]}
