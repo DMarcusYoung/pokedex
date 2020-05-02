@@ -31,6 +31,10 @@ router.route('/restaurant')
     .patch(chickenTinderController.addYes);
 
 
+
+router.route('/restaurant/1/:restId')
+  .get(chickenTinderController.getRestaurantById);
+
 router.route('/restaurant/:roomId')
     .get(chickenTinderController.getRestaurantsByRoomId);
 
