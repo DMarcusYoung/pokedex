@@ -49,16 +49,24 @@ module.exports = {
     // Used when either user says yes to a restaurant
     addYes: (req, res) => {
         const { restId } = req.body;
-        console.log(restId);
+        // res.json(restId);
         connection.query(chickenTinderQueries.getRestaurantByRestId, restId, (err, data) => {
             if (err) res.json(err);
-            console.log(data);
+            // res.json(data);
             if (data.num_of_yes === 0) {
+                connection.query(chickenTinderQueries.addYes, 1, restId, (err, data2) => {
+                    if (err) throw err;
+                    // res.json(data2);
+                });
 // update query 1
 // value for success
-                // connection.query(chickenTinderQueries.addYes, 1, )
             }
             if (data.num_of_yes === 1) {
+                connection.query(chickenTinderQueries.addYes, 2, restId, (err, data2) => {
+                    if (err) throw err;
+                    // res.send(data2);
+                });
+
 // update query to 2
 // value for match
             }
