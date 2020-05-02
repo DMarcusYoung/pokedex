@@ -20,33 +20,21 @@ class Create extends Component {
     const { value } = e.target;
     this.setState({ city: value });
   };
+
+
   handleSessionCode = (e) => {
     const { value } = e.target;
     this.setState({ sessionCode: value });
   };
 
-  handleCreate = async () => {
+  handleCreate = async (e) => {
+    e.preventDefault();
     try {
       console.log("Im hit")
-      // await axios.post('/api/room', {roomId: this.state.sessionCode});
+      await axios.post('/api/room', {roomId: this.state.sessionCode});
       const data = await axios.post('/api/yelp', { roomId: this.state.sessionCode, city: this.state.city });
-      console.log(data);
-      // this.props.history.push(`/swipe/${this.state.sessionCode}`);
-      axios.get('/api/room').then(res =>{
-        let canPost = true;
-        console.log(res)
-        for(let i in res.data){
-          if(parseInt(this.state.sessionCode) === res.data[i].room_number){
-            alert('That code is already taken');
-            canPost = false;
-            break;
-          }
-        }
-        if(canPost) {
-          axios.post('/api/room', {roomId: this.state.sessionCode})
-          this.props.history.push(`/swipe/${this.state.sessionCode}`);
-        }
-      })
+
+      this.props.history.push(`/swipe/${this.state.sessionCode}`);
     } catch(e) {
       console.log(e);
     }
@@ -79,7 +67,7 @@ class Create extends Component {
         </form>
 
         {/* Input for session code to appear after generation */}
-        <form>
+        <form onSubmit={ (e) => this.handleCreate(e)}>
           <div>
             <input
               id="sessionCode"

@@ -9,6 +9,7 @@ module.exports = {
         const { roomId } = req.body;
         connection.query(chickenTinderQueries.createRoom, roomId, (err) => {
             if (err) throw err;
+            console.log("I'm hit");
             return res.json(roomId);
         });
     },
@@ -56,7 +57,7 @@ module.exports = {
 // update query 1
 // value for success
             }
-            if(data.num_of_yes ===1){
+            if(data.num_of_yes === 1){
 // update query to 2
 // value for match
             }

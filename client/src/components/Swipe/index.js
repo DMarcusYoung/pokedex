@@ -32,20 +32,20 @@ class Swipe extends Component {
     }
   }
 
-
   clickNext = () => {
     this.setState({ counter: this.state.counter + 1 })
   }
 
 
-  // handleYes =() => {
-  //   this.clickNext();
-  // }
-
-
+  handleNo = () => {
+    this.clickNext();
+  }
+  
   handleYes = async (restId) => {
 
-    const res = await axios.patch(`api/restaurant/${restId}`) 
+    const res = await axios.patch(`/api/restaurant`, { restId })
+    console.log(res)
+
     if (res.error !== '') {
       console.log(res.error)
     }
@@ -96,13 +96,12 @@ class Swipe extends Component {
 
 
 
-  handleNo = () => {
-    this.clickNext();
-  }
+
 
 
   render() {
-    console.log(this.state.restaurants);
+    console.log(this.state);
+    console.log(this.state.counter);
     return (
 
       <div className="card">

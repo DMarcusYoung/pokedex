@@ -14,6 +14,7 @@ class Join extends Component {
   };
 
   handleJoin = e => {
+    e.preventDefault();
     axios.get(`/api/restaurant/${this.state.joinCode}`)
       .then(response => {
         console.log(response)
@@ -21,6 +22,7 @@ class Join extends Component {
         const data = response.data;
         // gets the first restaurant object in the array 
         const restaurant = data[0];
+        console.log(restaurant)
         // conditional to check if the room number entered is still an open session
         if (restaurant.closed === 'n') {
           // pulls the room_number from the first item in the array to create the dynamic url
@@ -56,7 +58,7 @@ class Join extends Component {
         <h1>JOIN</h1>
 
         {/* Join code input box */}
-        <form>
+        <form onSubmit={ (e) => this.handleJoin(e)}>
           <div>
             <input
               id="joinCode"
