@@ -53,9 +53,7 @@ router.route('/yelp')
                 console.log(e);
             }
         }
-
-
-
+        res.status(200).json({ success: true });
     })
     .catch(e => {
         console.log(e);

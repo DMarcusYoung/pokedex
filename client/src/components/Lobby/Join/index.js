@@ -14,6 +14,7 @@ class Join extends Component {
   };
 
   handleJoin = e => {
+    e.preventDefault();
     axios.get(`/api/restaurant/${this.state.joinCode}`)
       .then(response => {
         console.log(response)
@@ -57,7 +58,7 @@ class Join extends Component {
         <h1>JOIN</h1>
 
         {/* Join code input box */}
-        <form>
+        <form onSubmit={ (e) => this.handleJoin(e)}>
           <div>
             <input
               id="joinCode"
