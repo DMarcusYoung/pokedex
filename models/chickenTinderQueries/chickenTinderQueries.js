@@ -19,5 +19,5 @@ module.exports = {
     closeRoom,
     addYes,
     getRestaurantsByRoomId,
-    getRestaurantByRestId
+    getRestaurantByRestId,
 };
