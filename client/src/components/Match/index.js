@@ -20,8 +20,10 @@ function Match(props) {
         </h3>
 
         <div className="choices animated fadeIn delay-1s slower">
-          <div className="picBox">
-            <img className="picture" src={props.rest && props.rest.restaurant_image_url} alt="" />
+          <div className="picBorder">
+            <div className="picBox">
+              <img className="picture" src={props.rest && props.rest.restaurant_image_url} alt="" />
+            </div>
           </div>
         </div>
 
