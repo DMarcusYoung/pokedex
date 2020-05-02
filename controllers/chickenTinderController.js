@@ -53,11 +53,12 @@ module.exports = {
         connection.query(chickenTinderQueries.getRestaurantByRestId, restId, (err, data) => {
             if (err) res.json(err);
             console.log(data);
-            if (data.num_of_yes === 0){
+            if (data.num_of_yes === 0) {
 // update query 1
 // value for success
+                // connection.query(chickenTinderQueries.addYes, 1, )
             }
-            if(data.num_of_yes === 1){
+            if (data.num_of_yes === 1) {
 // update query to 2
 // value for match
             }
