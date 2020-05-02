@@ -30,11 +30,21 @@ class Create extends Component {
   handleCreate = async (e) => {
     e.preventDefault();
     try {
-      console.log("Im hit")
-      await axios.post('/api/room', {roomId: this.state.sessionCode});
-      const data = await axios.post('/api/yelp', { roomId: this.state.sessionCode, city: this.state.city });
-
-      this.props.history.push(`/swipe/${this.state.sessionCode}`);
+      const roomList = await axios.get('/api/room')
+      let validCode = true;
+      for(let i in roomList.data){
+        if(roomList.data[i].room_number === parseInt(this.state.sessionCode)){
+          alert('Sorry, that room code is already taken, please choose another')
+          validCode = false;
+          break;
+        }
+      }
+      if(validCode){
+        await axios.post('/api/room', {roomId: this.state.sessionCode});
+        const data = await axios.post('/api/yelp', { roomId: this.state.sessionCode, city: this.state.city });
+  
+        this.props.history.push(`/swipe/${this.state.sessionCode}`);
+      }
     } catch(e) {
       console.log(e);
     }
