@@ -1,42 +1,34 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from 'react-router-dom';
 
-class Match extends Component {
+function Match(props) {
+  console.log(props)
 
-  state = {
-    name: "Title",
-    rating: "Rating",
-    picture: "Picture"
-  };
+  return (
 
-  render() {
-    return (
-
-      <div className="card">
+    <div className="card">
+      <Link to="/lobby">
 
         <h1 className="animated heartBeat slow">You have a Match!</h1>
 
         <h2 className="animated fadeIn delay-1s slower">
-          {this.state.name}
+          {props.rest && props.rest.restaurant_name}
         </h2>
 
         <h3 className="animated fadeIn delay-1s slower">
-          {this.state.rating}
+          {props.rest && props.rest.rating}
         </h3>
 
-        <p className="picture animated fadeIn delay-1s slower">
-          {this.state.picture}
-        </p>
+        <div className="choices animated fadeIn delay-1s slower">
+          <div className="picBox">
+            <img className="picture" src={props.rest && props.rest.restaurant_image_url} alt="" />
+          </div>
+        </div>
 
-        <Link to="/lobby">
-          <button className="backBtn">
-            Back
-          </button>
-        </Link>
+      </Link>
 
-      </div>
-    )
-  }
+    </div>
+  )
 };
 
 export default Match;

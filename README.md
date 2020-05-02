@@ -18,6 +18,7 @@ Simply create a personal room with the city you're in, share that room code with
 [STEPH KUO](https://github.com/sfds1)
 - Back-End Development
 - MySQL Database
+- Heroku
 
 [MARCUS YOUNG](https://github.com/DMarcusYoung)
 - Back-End Development

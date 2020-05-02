@@ -6,7 +6,7 @@ class Lobby extends Component {
   render() {
     return (
 
-      <div className="card">
+      <div className="card lobby">
         <Link to="/create"> <button className="decideBtn">
           Create
           </button>

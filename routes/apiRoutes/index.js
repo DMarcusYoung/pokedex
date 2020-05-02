@@ -43,8 +43,8 @@ router.route('/yelp')
             term: 'Restaurants'
         }
     }).then(async response => {
-        const restaurantData = response.data.businesses.map(restaurant => { return  [restaurant.name, restaurant.image_url, restaurant.rating] });
-        let query = `INSERT INTO restaurants (room_number, restaurant_name, restaurant_image_url, rating) VALUES (?, ?, ?, ?);`;
+        const restaurantData = response.data.businesses.map(restaurant => { return  [restaurant.name, restaurant.image_url, restaurant.rating, restaurant.location.city] });
+        let query = `INSERT INTO restaurants (room_number, restaurant_name, restaurant_image_url, rating, city) VALUES (?, ?, ?, ?, ?);`;
         console.log(roomId);
         for(let i = 0; i < restaurantData.length; i++) {
             try {
