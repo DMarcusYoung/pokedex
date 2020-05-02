@@ -13,5 +13,6 @@ CREATE TABLE restaurants (
     rating INT,
     num_of_yes INT DEFAULT 0,
     city VARCHAR(255),
+    rest_url VARCHAR(255),
     PRIMARY KEY(id)
 );
