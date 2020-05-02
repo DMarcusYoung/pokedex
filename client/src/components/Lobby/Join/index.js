@@ -27,8 +27,8 @@ class Join extends Component {
         this.props.history.push(`/swipe/${restaurant.room_number}`);
         // if the room number is closed and there is a match, then show the match
         } else {
-          // not sure if want to do another check if the room number is closed AND there was NO match
-          this.props.history.push(`/match`);
+          // For later if want to do another check if the room number is closed AND there was NO match
+          alert('The session code you entered is closed.  Please try again.')
         }
       })
       // If a session code is entered that does not exist
