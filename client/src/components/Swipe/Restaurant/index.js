@@ -6,9 +6,9 @@ function Restaurant(props) {
   return (
     <div>
       <div>
-        <h4>{props.rest && props.rest.room_number} {props.rest && props.rest.city}</h4>
+        <h4>{props.rest && props.rest.room_number} - {props.rest && props.rest.city}</h4>
         <h2>{props.rest && props.rest.restaurant_name}</h2>
-        <h3>{props.rest && props.rest.rating}</h3>
+        <h4 className="stars">{"★".repeat(props.rest && props.rest.rating)}</h4>
       </div>
 
       <div className="choices">
