@@ -9,7 +9,7 @@ function Match(props) {
     <div className="card">
       <Link to="/lobby">
 
-        <h1 className="animated heartBeat slow">You have a Match!</h1>
+        <h1 className="animated heartBeat slow">you have a match!</h1>
 
         <h2 className="animated fadeIn delay-1s slower">
           {props.rest && props.rest.restaurant_name}
