@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from 'react-router-dom';
 import axios from "axios";
 import Restaurant from './Restaurant';
+import Match from "../Match";
 
 class Swipe extends Component {
 
@@ -22,6 +23,10 @@ class Swipe extends Component {
       this.setState({ counter: 0 })
       this.props.history.push(`/lobby`);
       // this.renderRestaurants()
+    } if (this.state.restaurants.num_of_yes === 2) {
+      return <Match
+      rest={this.state.restaurants[this.state.counter]}
+      />
     } else {
       console.log(this.state.restaurants[this.state.counter])
       return <Restaurant
@@ -49,9 +54,9 @@ class Swipe extends Component {
     if (res.error !== '') {
       console.log(res.error)
     }
-    if (res.match !== '') {
-      this.props.history.push('/match')
-    }
+    // if (res.match !== '') {
+    //   this.props.history.push('/match')
+    // }
     if (res.success !== '') {
       this.clickNext();
     }
