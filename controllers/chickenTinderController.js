@@ -9,7 +9,6 @@ module.exports = {
         const { roomId } = req.body;
         connection.query(chickenTinderQueries.createRoom, roomId, (err) => {
             if (err) throw err;
-            console.log("I'm hit");
             return res.json(roomId);
         });
     },
@@ -23,9 +22,10 @@ module.exports = {
     },
     // Used when there is a match so the room cannot be entered again
     closeRoom: (req, res) => {
-        connection.query(chickenTinderQueries.closeRoom, (err) => {
+        const { roomNumber } = req.body;
+        connection.query(chickenTinderQueries.closeRoom, roomNumber, (err) => {
             if (err) throw err;
-            return res.send();
+            res.send();
         });
     },
     // Used when Create user enters a city for to find restaurants
@@ -74,10 +74,10 @@ module.exports = {
         });
     },
     getRestaurantById: (req, res) => {
-      const { restId } = req.params;
-      connection.query(chickenTinderQueries.getRestaurantByRestId, restId, (err, restaurants) => {
-        if(err) throw err;
-        return res.json(restaurants[0]);
-      });
-    }
+        const { restId } = req.params;
+        connection.query(chickenTinderQueries.getRestaurantByRestId, restId, (err, restaurants) => {
+            if (err) throw err;
+            return res.json(restaurants[0]);
+        });
+    },
 };
