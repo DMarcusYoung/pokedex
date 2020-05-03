@@ -24,12 +24,21 @@ class Join extends Component {
         // conditional to check if the room number entered is still an open session
         if (restaurant.closed === 'n') {
           // pulls the room_number from the first item in the array to create the dynamic url
-        this.props.history.push(`/swipe/${restaurant.room_number}`);
-        // if the room number is closed and there is a match, then show the match
+          this.props.history.push(`/swipe/${restaurant.room_number}`);
+          // if the room number is closed and there is a match, then show the match
         } else {
-          // For later if want to do another check if the room number is closed AND there was NO match
-          alert('The session code you entered is closed.  Please try again.')
+          for (let i = 0; i < data.length; i++) {
+            if (data[i].num_of_yes === 2) {
+              this.props.history.push(`/match/${data[i].id}`);
+              break;
+            }
+            // case for when the room is closed AND there is no match
+            if (i === data.length-1) {
+              alert('The session code you entered is closed and there was no match. Please try again.')
+            }
+          }
         }
+
       })
       // If a session code is entered that does not exist
       .catch(function (error) {
@@ -53,13 +62,13 @@ class Join extends Component {
     return (
 
       <div className="card">
-                <div className="title">
-        <h3>join</h3>
-        <h3>session</h3>
+        <div className="title">
+          <h3>join</h3>
+          <h3>session</h3>
         </div>
 
         {/* Join code input box */}
-        <form onSubmit={ (e) => this.handleJoin(e)}>
+        <form onSubmit={(e) => this.handleJoin(e)}>
           <div>
             <input
               id="joinCode"
@@ -73,8 +82,8 @@ class Join extends Component {
         </form>
 
         {/* Joins another player */}
-          <button className="decideBtn" onClick={this.handleJoin} id="joinSession">
-            join
+        <button className="decideBtn" onClick={this.handleJoin} id="joinSession">
+          join
           </button>
 
         <Link to="/lobby">
