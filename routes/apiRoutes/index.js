@@ -4,19 +4,17 @@ const axios = require('axios');
 const _ = require('underscore');
 const mysql = require('mysql2');
 
-const chickenTinderQueries = require('./../../models/chickenTinderQueries/chickenTinderQueries');
-
 let connection;
 if (process.env.JAWSDB_URL) {
     connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
-connection = mysql.createConnection({
-    host: 'localhost',
-    port: 3306,
-    user: 'root',
-    password: 'password',
-    database: 'chicken_tinder_db',
-}).promise();
+    connection = mysql.createConnection({
+        host: 'localhost',
+        port: 3306,
+        user: 'root',
+        password: 'password',
+        database: 'chicken_tinder_db',
+    }).promise();
 }
 // const API_BASE_URL = 'https://api.yelp.com/v3/businesses/search?term=restaurant';
 // SAVE THIS TO A HIDDEN FILE ** DO NOT FINISH PROJECT WITH THIS ** 
@@ -30,10 +28,8 @@ router.route('/restaurant')
     .post(chickenTinderController.addRestaurant)
     .patch(chickenTinderController.addYes);
 
-
-
 router.route('/restaurant/1/:restId')
-  .get(chickenTinderController.getRestaurantById);
+    .get(chickenTinderController.getRestaurantById);
 
 router.route('/restaurant/:roomId')
     .get(chickenTinderController.getRestaurantsByRoomId);
@@ -41,7 +37,6 @@ router.route('/restaurant/:roomId')
 router.route('/yelp')
     .post((req, res) => {
         const { roomId, city } = req.body;
-        console.log(roomId);
         axios.get(`https://api.yelp.com/v3/businesses/search`, {
             headers: {
                 authorization: process.env.BEARER_TOKEN,
@@ -51,9 +46,8 @@ router.route('/yelp')
                 term: 'Restaurants'
             },
         }).then(async (response) => {
-            const restaurantData = response.data.businesses.map(restaurant => { return  [restaurant.name, restaurant.image_url, restaurant.rating, restaurant.location.city, restaurant.url] });
-            const query = `INSERT INTO restaurants (room_number, restaurant_name, restaurant_image_url, rating, city, rest_url) VALUES (?, ?, ?, ?, ?,?);`;
-            console.log(roomId);
+            const restaurantData = response.data.businesses.map((restaurant) => { return [restaurant.name, restaurant.image_url, restaurant.rating, restaurant.location.city, restaurant.url] });
+            const query = 'INSERT INTO restaurants (room_number, restaurant_name, restaurant_image_url, rating, city, rest_url) VALUES (?, ?, ?, ?, ?,?);';
             for (let i = 0; i < restaurantData.length; i++) {
                 try {
                     await connection.query(query, [roomId, ...restaurantData[i]]);

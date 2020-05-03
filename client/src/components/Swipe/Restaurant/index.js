@@ -35,7 +35,7 @@ function Restaurant(props) {
         <img className="yesBtn"
           src="../../../../images/yes.jpg"
           alt="yes"
-          onClick={() => props.handleYes(props.rest.id)}
+          onClick={() => props.handleYes(props.rest.id, props.rest.room_number)}
         />
 
       </div>

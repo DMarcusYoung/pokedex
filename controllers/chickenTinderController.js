@@ -22,8 +22,8 @@ module.exports = {
     },
     // Used when there is a match so the room cannot be entered again
     closeRoom: (req, res) => {
-        const { restId } = req.body;
-        connection.query(chickenTinderQueries.closeRoom, restId, (err) => {
+        const { roomNumber } = req.body;
+        connection.query(chickenTinderQueries.closeRoom, roomNumber, (err) => {
             if (err) throw err;
             res.send();
         });
@@ -74,10 +74,10 @@ module.exports = {
         });
     },
     getRestaurantById: (req, res) => {
-      const { restId } = req.params;
-      connection.query(chickenTinderQueries.getRestaurantByRestId, restId, (err, restaurants) => {
-        if(err) throw err;
-        return res.json(restaurants[0]);
-      });
-    }
+        const { restId } = req.params;
+        connection.query(chickenTinderQueries.getRestaurantByRestId, restId, (err, restaurants) => {
+            if (err) throw err;
+            return res.json(restaurants[0]);
+        });
+    },
 };
