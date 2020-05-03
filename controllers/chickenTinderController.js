@@ -62,7 +62,7 @@ module.exports = {
             }
             connection.query(chickenTinderQueries.getRestaurantByRestId, restId, (error, updatedData) => {
                 if (error) res.json(error);
-                res.json(updatedData[0].num_of_yes);
+                res.json(updatedData[0]);
             });
         });
     },
@@ -73,4 +73,11 @@ module.exports = {
             return res.json(restaurants);
         });
     },
+    getRestaurantById: (req, res) => {
+      const { restId } = req.params;
+      connection.query(chickenTinderQueries.getRestaurantByRestId, restId, (err, restaurants) => {
+        if(err) throw err;
+        return res.json(restaurants[0]);
+      });
+    }
 };

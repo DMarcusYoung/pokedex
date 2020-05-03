@@ -19,7 +19,7 @@ const App = props => (
       <Route exact path="/create" component={Create} />
       <Route exact path="/join" component={Join} />
       <Route exact path="/swipe/:roomNumber" component={Swipe} />
-      <Route exact path="/match" component={Match} />
+      <Route exact path="/match/:restId" component={Match} />
       <Route exact path="/apitest" component={RestaurantList} />
       <Route exact path="/end" component={End} />
 

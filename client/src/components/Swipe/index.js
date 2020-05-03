@@ -3,7 +3,6 @@ import { withRouter } from 'react-router-dom';
 import axios from "axios";
 import Restaurant from './Restaurant';
 import Match from "../Match";
-import End from "./End";
 
 class Swipe extends Component {
 
@@ -20,13 +19,11 @@ class Swipe extends Component {
   }
 
   renderRestaurants() {
-    if (this.state.counter > 19) {
+    if (this.state.counter > (this.state.restaurants.length - 1) && this.state.counter > 0) {
       this.setState({ counter: 0 })
       this.props.history.push('/end')
     } if (this.state.restaurants.num_of_yes === 2) {
-      return <Match
-      rest={this.state.restaurants[this.state.counter]}
-      />
+      this.props.history.push(`/match/${this.state.restaurants.id}`);
     } else {
       console.log(this.state.restaurants)
       return <Restaurant
@@ -48,38 +45,14 @@ class Swipe extends Component {
   
   handleYes = async (restId) => {
     const res = await axios.patch(`/api/restaurant`, { restId })
-    console.log(res)
-    if (res.data === 2) {
-      await axios.patch('/api/room', { restId })
-      this.props.history.push('/match')
+    console.log("I am res", res)
+    if (res.data.num_of_yes === 2) {
+      this.props.history.push(`/match/${res.data.id}`);
     }
     else {
       this.clickNext();
     }
   }
-
-  /**
-   * grab restaurant id inside handleYes
-   * make axios call to update restaurant by id
-   * in controller
-   *  find rest by id
-   *  check number_of_yes in rest
-   *  if 0, update to 1 and return success status
-   *  if 1, update to 2 and bring up match page
-   * 
-   * in controller, we can respond with an object like so 
-   * res.json({error: '', success: '', match: ''})
-   * 
-   *  on the frontend once the response returns from the backend, we do a check for each of these fields
-   * if error is defined, that means something went wrong
-   * if success is defined, that means all good, call clickNext
-   *  if match if defined, that means we have a match, redirect to match screen
-   * 
-   * 
-   * Update room to closed
-   * 
-   * 
-   */
 
   render() {
     return (
