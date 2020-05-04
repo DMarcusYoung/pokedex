@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { withRouter } from 'react-router-dom';
 import axios from "axios";
 import Restaurant from './Restaurant';
-import Match from "../Match";
 
 class Swipe extends Component {
 
