@@ -51,6 +51,7 @@ class Match extends Component {
 
         <a className="backBtn"
           href={this.state.restaurant.rest_url}
+          rel="noopener noreferrer"
           target="_blank"
         >details</a>
 
