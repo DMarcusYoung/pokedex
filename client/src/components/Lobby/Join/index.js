@@ -33,29 +33,17 @@ class Join extends Component {
               break;
             }
             // case for when the room is closed AND there is no match
-            if (i === data.length-1) {
+            if (i === data.length - 1) {
               alert('The session code you entered is closed and there was no match. Please try again.')
             }
           }
         }
-
       })
       // If a session code is entered that does not exist
       .catch(function (error) {
         console.log(error);
         alert('The code you entered is invalid.  Please try again.')
       });
-    // axios.get('/api/room').then(res => {
-    //   console.log(res.data)
-    //   for(let i in res.data){
-    //     if(parseInt(this.state.joinCode) === res.data[i].room_number){
-
-    //       this.props.history.push('/swipe')
-    //       break;
-    //     }
-    //   }
-    //   console.log('invalid session code')
-    // })
   }
 
   render() {

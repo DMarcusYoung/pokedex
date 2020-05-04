@@ -6,5 +6,4 @@ const apiRoutes = require('./apiRoutes');
 // This will prepend /api to anyroute declared within apiRoutes
 router.use('/api', apiRoutes);
 
-
 module.exports = router;

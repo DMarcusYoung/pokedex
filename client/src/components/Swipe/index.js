@@ -38,15 +38,14 @@ class Swipe extends Component {
     this.setState({ counter: this.state.counter + 1 })
   }
 
-
   handleNo = () => {
     this.clickNext();
   }
-  
+
   handleYes = async (restId, roomNumber) => {
     const res = await axios.patch(`/api/restaurant`, { restId })
     if (res.data.num_of_yes === 2) {
-      console.log({roomNumber})
+      console.log({ roomNumber })
       await axios.patch(`/api/room`, { roomNumber })
       this.props.history.push(`/match/${res.data.id}`);
     }
@@ -60,7 +59,6 @@ class Swipe extends Component {
 
       <div className="card">
         {this.renderRestaurants()}
-
       </div>
     )
   }

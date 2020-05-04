@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from 'react-router-dom';
 
 function End(props) {
-  // console.log(props)
 
   return (
     <div className="card">

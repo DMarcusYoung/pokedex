@@ -1,7 +1,6 @@
 import React from "react";
 
 function Restaurant(props) {
-  // console.log(props)
 
   return (
     <div>

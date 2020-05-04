@@ -18,7 +18,6 @@ class Match extends Component {
     }
   }
 
-
   render() {
     console.log(this.state);
     return (
@@ -26,39 +25,38 @@ class Match extends Component {
       <div className="card">
         <Link to="/lobby">
 
-
           <h3 className="matchTitle animated heartBeat slow">you have a match!</h3>
 
           <div className="matchChoices">
-          <h2 className="animated fadeIn delay-1s slower">
-            {this.state.restaurant.restaurant_name}
-          </h2>
+            <h2 className="animated fadeIn delay-1s slower">
+              {this.state.restaurant.restaurant_name}
+            </h2>
 
-          <h4 className="stars animated fadeIn delay-1s slower">
-            {"★".repeat(this.state.restaurant.rating)}
-          </h4>
+            <h4 className="stars animated fadeIn delay-1s slower">
+              {"★".repeat(this.state.restaurant.rating)}
+            </h4>
 
 
-          <div className="animated fadeIn delay-1s slower">
-            <div className="picBorder">
-              <div className="picBox">
-                <img className="picture"
-                src={this.state.restaurant.restaurant_image_url}
-                alt="" />
+            <div className="animated fadeIn delay-1s slower">
+              <div className="picBorder">
+                <div className="picBox">
+                  <img className="picture"
+                    src={this.state.restaurant.restaurant_image_url}
+                    alt="" />
+                </div>
               </div>
             </div>
           </div>
-          </div>
-          </Link>
+        </Link>
 
-          <a className="backBtn"
+        <a className="backBtn"
           href={this.state.restaurant.rest_url}
           target="_blank"
-          >details</a>
-
+        >details</a>
 
       </div>
     )
   }
 }
+
 export default Match;
