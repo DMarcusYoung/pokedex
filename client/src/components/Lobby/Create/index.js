@@ -10,11 +10,9 @@ class Create extends Component {
     restaurants: []
   };
 
-  
   async componentDidMount() {
 
   }
-
 
   handleCity = (e) => {
     const { value } = e.target;
@@ -32,27 +30,22 @@ class Create extends Component {
     try {
       const roomList = await axios.get('/api/room')
       let validCode = true;
-      for(let i in roomList.data){
-        if(roomList.data[i].room_number === parseInt(this.state.sessionCode)){
+      for (let i in roomList.data) {
+        if (roomList.data[i].room_number === parseInt(this.state.sessionCode)) {
           this.props.history.push(`/taken`);
           validCode = false;
           break;
         }
       }
-      if(validCode){
-        await axios.post('/api/room', {roomId: this.state.sessionCode});
+      if (validCode) {
+        await axios.post('/api/room', { roomId: this.state.sessionCode });
         const data = await axios.post('/api/yelp', { roomId: this.state.sessionCode, city: this.state.city });
-  
+
         this.props.history.push(`/swipe/${this.state.sessionCode}`);
       }
-    } catch(e) {
+    } catch (e) {
       console.log(e);
     }
-
-    // // console.log(useBusinessSearch('restaurants', 'Berkeley'))
-    // // get request to Yelp Api for restaurant data
-    // // axios.post('/api/restaurants')
-    // console.log('hit')
   }
 
   render() {
@@ -60,8 +53,8 @@ class Create extends Component {
 
       <div className="card">
         <div className="title">
-        <h3>create</h3>
-        <h3>session</h3>
+          <h3>create</h3>
+          <h3>session</h3>
         </div>
 
         {/* Input for city */}
@@ -79,7 +72,7 @@ class Create extends Component {
         </form>
 
         {/* Input for session code to appear after generation */}
-        <form onSubmit={ (e) => this.handleCreate(e)}>
+        <form onSubmit={(e) => this.handleCreate(e)}>
           <div>
             <input
               id="sessionCode"
@@ -95,7 +88,7 @@ class Create extends Component {
         {/* Creates a session code */}
         {/* <Link to={`/swipe/${this.state.sessionCode}`}> */}
         <button className="decideBtn" onClick={this.handleCreate} id="createSession">
-            create
+          create
         </button>
         {/* </Link> */}
 
