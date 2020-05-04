@@ -34,7 +34,7 @@ class Create extends Component {
       let validCode = true;
       for(let i in roomList.data){
         if(roomList.data[i].room_number === parseInt(this.state.sessionCode)){
-          alert('Sorry, that room code is already taken, please choose another')
+          this.props.history.push(`/taken`);
           validCode = false;
           break;
         }

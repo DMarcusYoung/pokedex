@@ -7,6 +7,7 @@ import Create from './components/Lobby/Create';
 import Join from './components/Lobby/Join';
 import Swipe from './components/Swipe';
 import End from './components/Swipe/End';
+import Taken from './components/Swipe/Taken';
 import Match from './components/Match';
 
 const App = props => (
@@ -22,6 +23,7 @@ const App = props => (
       <Route exact path="/match/:restId" component={Match} />
       <Route exact path="/apitest" component={RestaurantList} />
       <Route exact path="/end" component={End} />
+      <Route exact path="/taken" component={Taken} />
 
     </div>
   </Router>
