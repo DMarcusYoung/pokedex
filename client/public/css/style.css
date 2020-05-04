@@ -40,7 +40,7 @@ h2 {
   line-height: 45px;
   font-size: 45px;
   font-weight: bolder;
-  color: rgb(50, 50, 50);
+  color: rgb(34, 34, 34);
 }
 
 /* Title font */
@@ -59,6 +59,10 @@ h3 {
 .title {
   margin-bottom: 50px;
   margin-top: 20px;
+}
+.matchTitle {
+  margin-bottom: 0px;
+  margin-top: 30px;
 }
 
 /* Session code and city */
@@ -93,7 +97,6 @@ h4 {
   width: 96%;
   height: 98%;
   border-radius: 20px;
-
 }
 .picBorder {
   padding-top: 8px;
@@ -113,6 +116,10 @@ h4 {
 .choices {
   height: 160px;
   margin-top: 100px;
+}
+.matchChoices {
+  height: 160px;
+  margin-top: 30px;
 }
 .yesBtn {
   height: 120px;
@@ -157,7 +164,8 @@ h4 {
   color: white;
   font-size: 30px;
   border: none;
-  margin: 35px;
+  margin: auto;
+  margin-bottom: 30px;
 }
 
 .mainPage{
@@ -179,6 +187,8 @@ h4 {
 a, a:link, a:visited, a:hover, a:active 
 {
   text-decoration: none;
+  color: white;
+  padding-top: 10px;
 }
 .stars {
     background-image: linear-gradient(135deg, #feab3a 0%,#f35626 100%);
