@@ -45,8 +45,6 @@ Simply create a personal room with the city you're in, share that room code with
 - Yelp API
 - Photoshop
 
-## Features
-
 ## Future Development
 - Submit session code to the other user
 - Implement random session code generation to remove user input
