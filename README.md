@@ -49,6 +49,7 @@ Simply create a personal room with the city you're in, share that room code with
 - Submit session code to the other user
 - Implement random session code generation to remove user input
 - Pull in more Yelp API data to display Match result details in-app
+- Live updates for both users to get a Match as soon as one is found
 - Input field for number of users (for groups)
 - Track users to email results / method of saving all previous Matches
 - Delete session data after a set time to reduce query times and storage costs
